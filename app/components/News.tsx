@@ -22,8 +22,7 @@ const News = () => {
 
 
         <div className="flex flex-col w-full gap-3 sm:flex-row">
-          <Button 
-            type="button" 
+          <Button
             title="Dowiedz się więcej" 
             icon="/play.svg"
             variant="btn_white_text" 

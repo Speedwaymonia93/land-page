@@ -78,7 +78,6 @@ const Management = () => {
             className="camp-quote"
           />
          <Button 
-            type="button" 
             title="Poznaj nas" 
             icon="/play.svg"
             variant="btn_white_text" 
