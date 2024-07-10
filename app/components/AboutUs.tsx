@@ -2,7 +2,7 @@ import { CONGRESS_PEOPLE, ABOUT_US_TITLE_PL } from '../constants/index'
 import Image from 'next/image'
 import React from 'react'
 import Link from "./Link";
-
+import iconFallback from "../../public/map.svg";
 const AboutUs = () => {
   return (
     <section className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
@@ -62,7 +62,7 @@ const FeatureItem = ({ title, icon, description }: FeatureItem) => {
   return (
     <li className="flex w-full flex-1 flex-col items-start">
       <div className="rounded-full p-4 lg:p-7 bg-green-50">
-        <Image src={icon} alt="map" width={100} height={100} className='image'/>
+        <Image src={icon || iconFallback } alt="map" width={100} height={100} className='image'/>
       </div>
       <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
         {title}

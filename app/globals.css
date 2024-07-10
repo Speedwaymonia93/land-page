@@ -159,3 +159,30 @@ body {
 .image{
 border-radius: 50%;
 }
+
+.page-title{
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+  padding-bottom: 2rem;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  justify-content: center;
+  max-width: 100%;
+  text-align: center;
+  margin-bottom:6rem;
+}
+
+.list-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  justify-content: center;
+  max-width: 100%;
+  text-align: center;
+
+}
