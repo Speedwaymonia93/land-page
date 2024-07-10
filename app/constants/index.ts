@@ -94,3 +94,104 @@ export const SOCIALS = {
     '/wordpress.svg',
   ],
 };
+
+export const WELCOME_TITLE = [
+  {
+    polishTitle: 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich',
+    germanTitle: 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften'
+}]
+
+export const ABOUT_US_TITLE_PL = 'Krajowy Związek Towarzystw Polsko-Niemieckich działa od 1996 roku. Zrzesza organizacje zajmujące się budowaniem dialogu między Polską, a Niemcami na poziomie społeczeństwa obywatelskiego.';
+export const ABOUT_US_TITLE_DE = 'Der Nationale Verband der Polnisch-Deutschen Gesellschaften besteht seit 1996. Er bringt Organisationen zusammen, die sich für den Aufbau des Dialogs zwischen Polen und Deutschland auf der Ebene der Zivilgesellschaft einsetzen.';
+
+
+export const CONGRESS_PEOPLE = [
+  {
+    name: 'Aleksandra Burdziej',
+    photo: '/map.svg',
+    email: 'aleksandra.burdziej@gmail.com',
+    functionPL: 'prezes zarządu',
+    functionDE: 'Präsidentin des Vorstand'
+  },
+{
+    name: 'Adam Jarosz',
+    photo: '/Jarosz.jpg',
+    email: 'ad.jarosz5@gmail.com',
+    functionPL: 'wiceprezes zarządu ds. finansowo-administracyjnych',
+    functionDE: 'Vizepräsident der Geschäftsführung für Finanzen und Verwaltung'
+  },
+  {
+    name: 'Jan Rydel',
+    photo: '/Rydel.jpg',
+    email: 'janrydel@gmail.com',
+    functionPL: 'wiceprezes zarządu',
+    functionDE: 'Vizepräsident der Geschäftsführung'
+  },
+  {
+    name: 'Sławomir Schultis',
+    photo: '/Schultiss.jpg',
+    email: 'sschultis@vp.pl',
+    functionPL: 'wiceprezes zarządu',
+    functionDE: 'Vizepräsident des Vorstands'
+  },
+  {
+    name: 'Danuta Szczepaniak-Kucik',
+    photo: '/map.svg',
+    email: 'danuta_kucik@onet.eu',
+    functionPL: 'członek prezydium zarządu',
+    functionDE: 'Mitglied der Geschäftsführung'
+  },
+  {
+    name: 'Zbigniew Leraczyk',
+    photo: '/map.svg',
+    email: 'leraczyk.bilska@gmail.com',
+    functionPL: 'członek prezydium zarządu',
+    functionDE: 'Mitglied des Vorstands'
+  },
+  {
+    name: 'Cezary Kozak',
+    photo: '/map.svg',
+    email: 'avecesar82@gmail.com',
+    functionPL: 'członek prezydium zarządu',
+    functionDE: 'Mitglied der Geschäftsleitung'
+  },
+  {
+    name: 'Ewa Fiuk',
+    photo: '/map.svg',
+    email: 'ewa.fiuk@tlen.pl',
+    functionPL: 'członek zarządu',
+    functionDE: 'Vorstandsmitglied'
+  },
+  {
+    name: 'Agnieszka Filipiak',
+    photo: '/map.svg',
+    email: 'filipiak.agnieszka8@gmail.com',
+    functionPL: 'członek zarządu',
+    functionDE: 'Vorstandsmitglied'
+  },
+  {
+    name: 'Jolanta Murawska',
+    photo: '/map.svg',
+    email: 'filipiak.agnieszka8@gmail.com',
+    functionPL: 'jomur1@wp.pl',
+    functionDE: 'Vorstandsmitglied'
+  },
+];
+
+export const REVISION_COMISSION = [
+  {
+    namePL: 'Komisja Rewizyjna',
+    nameDE: 'Revisionsausschuss',
+    people: ['Waldemar Bukowski', 'Teresa Pop', 'Kamila Łączna']
+  }
+];
+
+export const CONTACT = [
+  {
+    addressStreet: 'ul. Piekary 13/2',
+    addressPostCode: '87-100 Toruń',
+    eMail: 'ad.jarosz5@gmail.com',
+  }
+]
+
+
