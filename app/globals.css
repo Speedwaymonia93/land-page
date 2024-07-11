@@ -184,5 +184,16 @@ border-radius: 50%;
   justify-content: center;
   max-width: 100%;
   text-align: center;
+}
 
+.about-title-desc{
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.logo-container{
+  display: flex;
+  flex-direction: row;
 }

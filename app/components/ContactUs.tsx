@@ -1,7 +1,11 @@
+'use client'
 import React from 'react'
 import Image from "next/image";
 import Button from "./Link";
+import { KONTAKT_BUTTON_PL, KONTAKT_BUTTON_DE, KONTAKT_INFO } from '../constants/index'
+import { useLanguage } from '../context/LanguageContext'
 const ContactUs = () => {
+const { language } = useLanguage();
   return (
       <section className="flexCenter flex-col">
       <div className="padding-container max-container w-full pb-24">
@@ -10,12 +14,14 @@ const ContactUs = () => {
          Działamy dla Ciebie
         </p>
         <div className="flex flex-wrap justify-between gap-5 lg:gap-10">
-          <h2 className="bold-40 lg:bold-64 xl:max-w-[390px]">Kontakt</h2>
-          <p className="regular-16 text-gray-30 xl:max-w-[520px]">Only with the hilink application you will no longer get lost and get lost again, because we already support offline maps when there is no internet connection in the field. Invite your friends, relatives and friends to have fun in the wilderness through the valley and reach the top of the mountain</p>
-         <Button 
-            title="Poznaj nas" 
+          <h2 className="bold-40 lg:bold-64 xl:max-w-[390px]">{language === 'pl' ? KONTAKT_BUTTON_PL : KONTAKT_BUTTON_DE}</h2>
+          <ul className="regular-16 text-gray-30 xl:max-w-[520px] flex flex-col text-center">{KONTAKT_INFO.map(function(item) { 
+            return <li key={item}>{item}</li>
+}) }</ul><Button 
+            title={language === 'pl' ? "Kontakt z nami" : "Germnd"} 
             icon="/play.svg"
             variant="btn_white_text" 
+            href='/contact'
           />
         </div>
       </div>

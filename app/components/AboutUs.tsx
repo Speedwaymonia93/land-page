@@ -1,9 +1,12 @@
-import { CONGRESS_PEOPLE, ABOUT_US_TITLE_PL } from '../constants/index'
+'use client';
+import { ABOUT_US_TITLE_PL, ABOUT_US_TITLE_DE, ABOUT_TITLE_PL, ABOUT_TITLE_DE , PEOPLE_LIST, ABOUT_US_TITLE_DESC_DE, ABOUT_US_TITLE_DESC_PL} from '../constants/index'
 import Image from 'next/image'
 import React from 'react'
 import Link from "./Link";
 import iconFallback from "../../public/map.svg";
+import { useLanguage } from '../context/LanguageContext'
 const AboutUs = () => {
+    const { language } = useLanguage();
   return (
     <section className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
       <div className="max-container padding-container relative w-full flex justify-end">
@@ -26,22 +29,22 @@ const AboutUs = () => {
               height={50}
               className="absolute left-[-5px] top-[-28px] w-10 lg:w-[50px]"
             />
-            <h2 className="bold-40 lg:bold-64">O nas</h2>
+            <h2 className="bold-40 lg:bold-64">{language === 'pl' ? ABOUT_TITLE_PL: ABOUT_TITLE_DE}</h2>
           </div>
           <p>
-            {ABOUT_US_TITLE_PL}
+            {language === 'pl' ? ABOUT_US_TITLE_PL: ABOUT_US_TITLE_DE}
           </p>
-          <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
-            {CONGRESS_PEOPLE.map((feature) => (
-              <FeatureItem 
-                key={feature.name}
-                title={feature.name} 
-                icon={feature.photo}
-              />
-            ))}
+          <h3 className='about-title-desc'>
+            {language === 'pl' ? ABOUT_US_TITLE_DESC_PL: ABOUT_US_TITLE_DESC_DE}
+          </h3>
+          <ul className='text-center'>
+            {
+              PEOPLE_LIST.map(function(item) { 
+                return <li className="py-2" key={item}>{item}</li>})
+            }
           </ul>
            <Link 
-            title="Poznaj nas" 
+            title={language === 'pl' ? "Poznaj nas": "german wird"}
             icon="/play.svg"
             variant="btn_white_text" 
             href="/about"

@@ -1,7 +1,7 @@
 // NAVIGATION PL
 export const NAV_LINKS_PL = [
   { href: '/', key: 'home', label: 'Strona główna' },
-  { href: '/news', key: 'news', label: 'Aktualności' },
+  { href: '/statut', key: 'statut', label: 'Statut' },
   { href: '/about', key: 'about_us', label: 'O nas' },
   { href: '/management', key: 'management ', label: 'Zarząd ' },
     { href: '/congress', key: 'congress', label: 'Kongres' },
@@ -11,11 +11,11 @@ export const NAV_LINKS_PL = [
 // NAVIGATION DE
 export const NAV_LINKS_DE = [
   { href: '/', key: 'home', label: 'Startseite' },
-  { href: '/', key: 'ktuelles', label: 'Aktuelles' },
-  { href: '/', key: 'uber_uns', label: 'Über Uns' },
-  { href: '/', key: 'vorstand ', label: 'Vorstand' },
-    { href: '/', key: 'kongress', label: 'Kongress' },
-    { href: '/', key: 'kontakt', label: 'Kontakt' },
+  { href: '/statut', key: 'statut', label: 'Satzung' },
+  { href: '/about', key: 'uber_uns', label: 'Über Uns' },
+  { href: '/management', key: 'vorstand ', label: 'Vorstand' },
+    { href: '/congress', key: 'kongress', label: 'Kongress' },
+    { href: '/contact', key: 'kontakt', label: 'Kontakt' },
 ];
 // CAMP SECTION
 export const PEOPLE_URL = [
@@ -104,6 +104,21 @@ export const WELCOME_TITLE = [
 export const ABOUT_US_TITLE_PL = 'Krajowy Związek Towarzystw Polsko-Niemieckich działa od 1996 roku. Zrzesza organizacje zajmujące się budowaniem dialogu między Polską, a Niemcami na poziomie społeczeństwa obywatelskiego.';
 export const ABOUT_US_TITLE_DE = 'Der Nationale Verband der Polnisch-Deutschen Gesellschaften besteht seit 1996. Er bringt Organisationen zusammen, die sich für den Aufbau des Dialogs zwischen Polen und Deutschland auf der Ebene der Zivilgesellschaft einsetzen.';
 
+export const PEOPLE_LIST =
+  ["Aleksandra Burdziej", "Adam Jarosz", "Jan Rydel", 
+"Sławomir Schultis wiceprezes",
+"Danuta Szczepaniak-Kucik",
+"Zbigniew Leraczyk",
+"Cezary Kozak",
+"Ewa Fiuk",
+"Agnieszka Filipiak",
+"Jolanta Murawska",
+"Waldemar BukowskI",
+"Teresa Pop",
+    "Kamila Łączna"]
+
+export const ABOUT_US_TITLE_DESC_PL = "W skład zarządu wchodzą";
+export const ABOUT_US_TITLE_DESC_DE = "German ";
 
 export const CONGRESS_PEOPLE = [
   {
@@ -194,4 +209,31 @@ export const CONTACT = [
   }
 ]
 
+export const AKTUALNOSCI_PL = 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich. Dowiedz sie wiecej co sie aktualnie dzieje.';
+export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften';
+
+export const ABOUT_TITLE_PL = "O nas"
+export const ABOUT_TITLE_DE = "Über uns"
+
+export const CHIEFS_TITLE_PL = "Zarząd"
+export const CHIEFS_TITLE_DE = "Vorstand"
+
+export const AKTUALNOSCI_TITLE_PL = "Statut"
+export const AKTUALNOSCI_TITLE_DE = "Satzung"
+
+export const KONTAKT_TITLE_PL = "Kontakt"
+export const KONTAKT_TITLE_DE = "Kontakt"
+
+export const KONTAKT_BUTTON_PL = "Kontakt"
+export const KONTAKT_BUTTON_DE = "Kontakt"
+export const KONTAKT_INFO = ["ul. Piekary 13/2", "87-100 Toruń", "e-mail: ad.jarosz5@gmail.com"]
+
+export const KONGRES_PL = "Działamy dla Ciebie"
+export const KONGRES_DE = "IN GERMAN"
+
+export const KONGRES_TITLE_PL = "Konkgres"
+export const KONGRES_TITLE_DE = "Kongres"
+
+export const KONGRES_TITLE_DESC_PL = "Loerp inpsi PL"
+export const KONGRES_TITLE_DESC_DE = "Loerp inpsi DE "
 
