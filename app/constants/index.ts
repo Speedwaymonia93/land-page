@@ -58,40 +58,38 @@ export const FEATURES = [
 ];
 
 // FOOTER SECTION
-export const FOOTER_LINKS = [
+export const FOOTER_LINKS_PL = [
   {
-    title: 'Learn More',
+    title: 'Przydatne linki',
     links: [
-      'About Hilink',
-      'Press Releases',
-      'Environment',
-      'Jobs',
-      'Privacy Policy',
-      'Contact Us',
+      { href: '/', key: 'home', label: 'Strona główna' },
+  { href: '/statut', key: 'statut', label: 'Statut' },
+  { href: '/about', key: 'about_us', label: 'O nas' },
+  { href: '/management', key: 'management ', label: 'Zarząd ' },
+    { href: '/congress', key: 'congress', label: 'Kongres' },
+  { href: '/contact', key: 'contact_us', label: 'Kontakt' },
     ],
   },
+];
+
+export const FOOTER_LINKS_DE = [
   {
-    title: 'Our Community',
-    links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
+    title: 'Przydatne linki',
+    links: [
+      { href: '/', key: 'home', label: 'Startseite' },
+  { href: '/statut', key: 'statut', label: 'Satzung' },
+  { href: '/about', key: 'uber_uns', label: 'Über Uns' },
+  { href: '/management', key: 'vorstand ', label: 'Vorstand' },
+    { href: '/congress', key: 'kongress', label: 'Kongress' },
+    { href: '/contact', key: 'kontakt', label: 'Kontakt' },
+    ],
   },
 ];
 
 export const FOOTER_CONTACT_INFO = {
-  title: 'Contact Us',
+  title: 'Skontaktuj się z nami',
   links: [
-    { label: 'Admin Officer', value: '123-456-7890' },
-    { label: 'Email Officer', value: 'hilink@akinthil.com' },
-  ],
-};
-
-export const SOCIALS = {
-  title: 'Social',
-  links: [
-    '/facebook.svg',
-    '/instagram.svg',
-    '/twitter.svg',
-    '/youtube.svg',
-    '/wordpress.svg',
+    { label: 'Adam Jarosz', value: 'hilink@akinthil.com' },
   ],
 };
 
@@ -234,6 +232,6 @@ export const KONGRES_DE = "IN GERMAN"
 export const KONGRES_TITLE_PL = "Konkgres"
 export const KONGRES_TITLE_DE = "Kongres"
 
-export const KONGRES_TITLE_DESC_PL = "Loerp inpsi PL"
+export const KONGRES_TITLE_DESC_PL = "Więcej informacji o kongresie oraz formularz rejestracyjny"
 export const KONGRES_TITLE_DESC_DE = "Loerp inpsi DE "
 

@@ -11,7 +11,7 @@ type LinkProps = {
 const Link = ({  title, icon, variant, full, href }: LinkProps) => {
   return (
     <a
-    className={`flexCenter gap-3 rounded-full border ${variant} ${full && 'w-full'}`}
+    className={`flex justify-center gap-3 rounded-full border ${variant} ${full && 'w-full'}`}
      href={href}
     >
       {icon && <Image src={icon} alt={title} width={24} height={24} />}

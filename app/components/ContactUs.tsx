@@ -7,15 +7,15 @@ import { useLanguage } from '../context/LanguageContext'
 const ContactUs = () => {
 const { language } = useLanguage();
   return (
-      <section className="flexCenter flex-col">
+      <section className="flex-col">
       <div className="padding-container max-container w-full pb-24">
         <Image src="/camp.svg" alt="camp" width={50} height={50} />
         <p className="uppercase regular-18 -mt-1 mb-3 text-green-50">
          Działamy dla Ciebie
         </p>
-        <div className="flex flex-wrap justify-between gap-5 lg:gap-10">
+        <div className="flex flex-wrap justify-between gap-5 lg:gap-10 flex-col">
           <h2 className="bold-40 lg:bold-64 xl:max-w-[390px]">{language === 'pl' ? KONTAKT_BUTTON_PL : KONTAKT_BUTTON_DE}</h2>
-          <ul className="regular-16 text-gray-30 xl:max-w-[520px] flex flex-col text-center">{KONTAKT_INFO.map(function(item) { 
+          <ul className="regular-16 text-gray-30 xl:max-w-[520px] flex flex-col">{KONTAKT_INFO.map(function(item) { 
             return <li key={item}>{item}</li>
 }) }</ul><Button 
             title={language === 'pl' ? "Kontakt z nami" : "Germnd"} 
@@ -24,16 +24,6 @@ const { language } = useLanguage();
             href='/contact'
           />
         </div>
-      </div>
-
-      <div className="flexCenter max-container relative w-full">
-        <Image 
-          src="/contact.jpg"
-          alt="boat"
-          width={1440}
-          height={580}
-          className="w-full object-cover object-center 2xl:rounded-5xl"
-        />
       </div>
     </section>
   )
