@@ -9,7 +9,6 @@ const About = () => {
   return <div className="container">
     <h2 className='page-title'>{language === 'pl' ? ABOUT_TITLE_PL : ABOUT_TITLE_DE}</h2>
     <p>{language === 'pl' ? ABOUT_US_TITLE_PL :ABOUT_US_TITLE_DE }</p>
-     <>czym sie zajmijemi</>
   </div>;
 };
 

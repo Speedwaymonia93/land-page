@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import LanguageSelector from './DropdownLanguage'
 const Footer = () => {
     const { language } = useLanguage();
   return (
@@ -39,8 +40,8 @@ const Footer = () => {
               </FooterColumn>
             ))}
 
-            <div className="flex flex-col gap-5">
-              <FooterColumn title={FOOTER_CONTACT_INFO.title}>
+            <div className="flex flex-col gap-5 testright">
+              <FooterColumn title={language === 'pl'? FOOTER_CONTACT_INFO.title : FOOTER_CONTACT_INFO.titleDE}>
                 {FOOTER_CONTACT_INFO.links.map((link) => (
                   <Link
                     href="/"
@@ -61,7 +62,14 @@ const Footer = () => {
         </div>
 
         <div className="border bg-gray-20" />
-        <p className="regular-14 w-full text-center text-gray-30">2024 Krajowy Związek Towarzystw Polsko-Niemieckich | All rights reserved</p>
+        <p className="regular-14 w-full text-center text-gray-30">
+          {
+            language === 'pl'? ' 2024 Krajowy Związek Towarzystw Polsko-Niemieckich | All rights reserved ': '2024 Nationaler Verband der Deutsch-Polnischen Gesellschaften | All rights reserved'
+          }
+        </p>
+
+        <div className='lg:hidden'><LanguageSelector/></div>
+        
       </div>
     </footer>
   )

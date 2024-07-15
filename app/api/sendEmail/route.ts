@@ -181,10 +181,8 @@ export async function POST(req: NextRequest) {
 	});
 
 	const response = await request;
-	console.log('Email sent:', response.body);
 	return NextResponse.json({ message: 'Email sent successfully!' });
   } catch (error) {
-	console.error('Error sending email:', error);
 	return NextResponse.json({ message: 'Error sending email' }, { status: 500 });
   }
 }

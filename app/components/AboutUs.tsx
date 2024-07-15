@@ -23,7 +23,7 @@ const AboutUs = () => {
         <div className="z-20 flex w-full flex-col lg:w-[60%]">
           <div className='relative'>
             <Image
-              src="/camp.svg"
+              src="/aboutus.png"
               alt="camp"
               width={50}
               height={50}
@@ -44,7 +44,7 @@ const AboutUs = () => {
             }
           </ul>
            <Link 
-            title={language === 'pl' ? "Poznaj nas": "german wird"}
+            title={language === 'pl' ? "Poznaj nas": "Lernen Sie uns kennen"}
             icon="/play.svg"
             variant="btn_white_text" 
             href="/about"

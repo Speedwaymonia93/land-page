@@ -9,16 +9,13 @@ const { language } = useLanguage();
   return (
       <section className="flex-col">
       <div className="padding-container max-container w-full pb-24">
-        <Image src="/camp.svg" alt="camp" width={50} height={50} />
-        <p className="uppercase regular-18 -mt-1 mb-3 text-green-50">
-         Działamy dla Ciebie
-        </p>
+        <Image src="/chat.png" alt="camp" width={50} height={50} />
         <div className="flex flex-wrap justify-between gap-5 lg:gap-10 flex-col">
           <h2 className="bold-40 lg:bold-64 xl:max-w-[390px]">{language === 'pl' ? KONTAKT_BUTTON_PL : KONTAKT_BUTTON_DE}</h2>
           <ul className="regular-16 text-gray-30 xl:max-w-[520px] flex flex-col">{KONTAKT_INFO.map(function(item) { 
             return <li key={item}>{item}</li>
 }) }</ul><Button 
-            title={language === 'pl' ? "Kontakt z nami" : "Germnd"} 
+            title={language === 'pl' ? "Kontakt z nami" : "Kontaktieren Sie uns"} 
             icon="/play.svg"
             variant="btn_white_text" 
             href='/contact'

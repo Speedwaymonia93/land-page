@@ -74,7 +74,7 @@ export const FOOTER_LINKS_PL = [
 
 export const FOOTER_LINKS_DE = [
   {
-    title: 'Przydatne linki',
+    title: 'Nützliche Links',
     links: [
       { href: '/', key: 'home', label: 'Startseite' },
   { href: '/statut', key: 'statut', label: 'Satzung' },
@@ -88,8 +88,9 @@ export const FOOTER_LINKS_DE = [
 
 export const FOOTER_CONTACT_INFO = {
   title: 'Skontaktuj się z nami',
+  titleDE: 'Kontaktieren Sie uns',
   links: [
-    { label: 'Adam Jarosz', value: 'hilink@akinthil.com' },
+    { label: 'Adam Jarosz', value: 'ad.jarosz5@gmail.com' },
   ],
 };
 
@@ -207,7 +208,7 @@ export const CONTACT = [
   }
 ]
 
-export const AKTUALNOSCI_PL = 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich. Dowiedz sie wiecej co sie aktualnie dzieje.';
+export const AKTUALNOSCI_PL = 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich.';
 export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften';
 
 export const ABOUT_TITLE_PL = "O nas"
@@ -232,6 +233,6 @@ export const KONGRES_DE = "IN GERMAN"
 export const KONGRES_TITLE_PL = "Konkgres"
 export const KONGRES_TITLE_DE = "Kongres"
 
-export const KONGRES_TITLE_DESC_PL = "Więcej informacji o kongresie oraz formularz rejestracyjny"
-export const KONGRES_TITLE_DESC_DE = "Loerp inpsi DE "
+export const KONGRES_TITLE_DESC_PL = "Więcej informacji o kongresie oraz formularz rejestracyjny."
+export const KONGRES_TITLE_DESC_DE = "Weitere Informationen zum Kongress und das Anmeldeformular."
 

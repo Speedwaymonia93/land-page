@@ -11,10 +11,10 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div>
-      <select value={language} onChange={handleLanguageChange}>
-        <option value="pl">Polski</option>
-        <option value="de">Deutch</option>
+    <div className='p-2'>
+      <select value={language} onChange={handleLanguageChange} className='p-3 rounded-md'>
+        <option value="pl">Polski 🇵🇱</option>
+        <option value="de">Deutch 🇩🇪</option>
         {/* Add more languages as needed */}
       </select>
     </div>

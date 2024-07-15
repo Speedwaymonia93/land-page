@@ -8,12 +8,12 @@ const News = () => {
     const { language } = useLanguage();
   return (
      <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
-          {/*wyciagnac obrazek zeby nie byl tlme .*/}
+        
        
 
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
         <Image 
-          src="/newsimg.svg"
+          src="/statute.png"
           alt="camp"
           width={50}
           height={50}
@@ -25,7 +25,7 @@ const News = () => {
         </p>
         <div className="flex flex-col w-full gap-3 sm:flex-row">
           <Button
-            title={language === 'pl' ? "Dowiedz się więcej" : "nach german"} 
+            title={language === 'pl' ? "Przejdź do statutu" : "Zur Satzung"} 
             icon="/play.svg"
             variant="btn_white_text" 
             href="/statut"
