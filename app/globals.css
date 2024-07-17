@@ -198,3 +198,7 @@ border-radius: 50%;
   flex-direction: row;
 }
 
+.image-class{
+  width: 210px;
+  height: 220px;
+}

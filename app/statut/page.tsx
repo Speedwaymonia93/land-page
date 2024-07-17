@@ -11,7 +11,7 @@ const News = () => {
         {language === 'pl' ? 'Statut Krajowego Związku Towarzystw Polsko-Niemieckich' :'Satzung des Bundesverbandes der Deutsch-Polnischen Gesellschaften' } </p>
 
       <a href="/KZTPN_STATUT.pdf" target="_blank" rel='noopener noreferrer'>
-        <button className='mt-6 p-4 rounded-lg bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300'>
+        <button className='mt-6 p-4 rounded-lg bg-rose-700 hover:bg-rose-400 active:bg-rose-400 focus:outline-none focus:ring focus:ring-rose-700 hover:text-white'>
           {language === 'pl' ? 'Pobierz' : 'Herunterladen'}
         </button>
     </a>

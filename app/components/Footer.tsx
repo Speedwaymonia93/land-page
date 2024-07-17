@@ -11,10 +11,6 @@ const Footer = () => {
     <footer className="flexCenter mb-24">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
-          <Link href="/" className="mb-10">
-            <Image src="/logo3.jpg" alt="logo" width={150} height={150}/>
-          </Link>
-
           <div className='flex flex-wrap gap-10 sm:justify-between md:flex-1'>
             {language === 'pl' && FOOTER_LINKS_PL.map((columns) => (
               <FooterColumn title={columns.title} key={columns.title}>

@@ -119,6 +119,44 @@ export const PEOPLE_LIST =
 export const ABOUT_US_TITLE_DESC_PL = "W skład zarządu wchodzą";
 export const ABOUT_US_TITLE_DESC_DE = "German ";
 
+export const LOGOS = [
+  {
+    alt: "Logo1",
+    photo: "/logopt1.jpg"
+  },
+   {
+    alt: "Logo2",
+    photo: "/logopt2.png"
+  },
+    {
+    alt: "Logo3",
+    photo: "/logopt3.jpg"
+  },
+     {
+    alt: "Logo4",
+    photo: "/logopt4.jpg"
+  },
+      {
+    alt: "Logo5",
+    photo: "/logopt5.jpg"
+  },
+       {
+    alt: "Logo6",
+    photo: "/logopt6.jpg"
+  }
+]
+
+export const COMISSION_PEOPLE = [
+  {
+    name: 'Waldemar Bukowski'
+  },
+  {
+    name: 'Teresa Pop'
+  },
+  {
+    name: 'Kamila Łaczna'
+  },
+]
 export const CONGRESS_PEOPLE = [
   {
     name: 'Aleksandra Burdziej',
@@ -216,6 +254,9 @@ export const ABOUT_TITLE_DE = "Über uns"
 
 export const CHIEFS_TITLE_PL = "Zarząd"
 export const CHIEFS_TITLE_DE = "Vorstand"
+
+export const CHIEFS_TITLE_PL2 = "Komisja Rewizyjna"
+export const CHIEFS_TITLE_DE2 = "Revisionsausschuss"
 
 export const AKTUALNOSCI_TITLE_PL = "Statut"
 export const AKTUALNOSCI_TITLE_DE = "Satzung"

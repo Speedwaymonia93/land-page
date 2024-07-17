@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {LanguageProvider} from './context/LanguageContext'
 export const metadata: Metadata = {
-  title: "Strona towarzystwa polako-niemieckiego",
+  title: "Strona Krajowego Związku Towarzystw Polsko-Niemieckich",
   description:
     "Strona poświęcona aktualnościom i działalmności towarzystwa polsko-niemieckiego",
 };
