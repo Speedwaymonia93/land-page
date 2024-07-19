@@ -130,7 +130,7 @@ const mj = mailjet.apiConnect(process.env.MAILJET_API_KEY as string, process.env
 
 export async function POST(req: NextRequest) {
   try {
-	const { imie, nazwisko, organizacja, grupa, vegetarianin, oprowadzanie, wjazd, nocleg } = await req.json();
+	const { imie, nazwisko, organizacja, grupa, vegetarianin, oprowadzanie, wjazd, nocleg, bal, uwagi } = await req.json();
 
 	const to = process.env.EMAIL_TO;
 	const from = process.env.EMAIL_USER;
@@ -164,6 +164,8 @@ export async function POST(req: NextRequest) {
         	<p><strong>Oprowadzanie w piątek:</strong> ${oprowadzanie}</p>
         	<p><strong>Wjazd na Szyndzielnię:</strong> ${wjazd}</p>
         	<p><strong>Nocleg:</strong> ${nocleg}</p>
+			<p><strong>Bal:</strong> ${bal}</p>
+			<p><strong>Uwagi:</strong> ${uwagi}</p>
         	<style>
           	h1 {
             	color: #333;

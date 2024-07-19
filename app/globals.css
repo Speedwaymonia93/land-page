@@ -163,7 +163,6 @@ border-radius: 50%;
 .page-title{
   text-align: center;
   font-size: 2rem;
-  text-decoration: underline;
   padding-bottom: 2rem;
 }
 
@@ -201,4 +200,19 @@ border-radius: 50%;
 .image-class{
   width: 210px;
   height: 220px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%; /* 4:3 aspect ratio (height/width * 100%) */
+  background: #f0f0f0; /* Background color in case of no image */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio while covering container */
 }

@@ -124,10 +124,6 @@ export const LOGOS = [
     alt: "Logo1",
     photo: "/logopt1.jpg"
   },
-   {
-    alt: "Logo2",
-    photo: "/logopt2.png"
-  },
     {
     alt: "Logo3",
     photo: "/logopt3.jpg"
@@ -143,24 +139,33 @@ export const LOGOS = [
        {
     alt: "Logo6",
     photo: "/logopt6.jpg"
+  },
+           {
+    alt: "Logo7",
+    photo: "/logopt.7.jpg"
+  },
+           {
+    alt: "Logo8",
+    photo: "/logopt8.png"
   }
 ]
 
 export const COMISSION_PEOPLE = [
   {
-    name: 'Waldemar Bukowski'
+    name: 'Waldemar Bukowski',
+    photo: '/bukowski.jpg'
   },
   {
     name: 'Teresa Pop'
   },
   {
-    name: 'Kamila Łaczna'
+    name: 'Kamila Łączna'
   },
 ]
 export const CONGRESS_PEOPLE = [
   {
     name: 'Aleksandra Burdziej',
-    photo: '/map.svg',
+    photo: '/burdziej.jpg',
     email: 'aleksandra.burdziej@gmail.com',
     functionPL: 'prezes zarządu',
     functionDE: 'Präsidentin des Vorstand'
@@ -216,7 +221,7 @@ export const CONGRESS_PEOPLE = [
   },
   {
     name: 'Agnieszka Filipiak',
-    photo: '/map.svg',
+    photo: '/filipiak.png',
     email: 'filipiak.agnieszka8@gmail.com',
     functionPL: 'członek zarządu',
     functionDE: 'Vorstandsmitglied'

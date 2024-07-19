@@ -7,9 +7,6 @@ export default function Home() {
   return (
     <>
       <News />
-      <AboutUs />
-      <Congress />
-      <ContactUs />
     </>
   );
 }
