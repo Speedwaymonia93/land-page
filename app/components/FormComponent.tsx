@@ -132,7 +132,7 @@ const FormComponent: React.FC = () => {
             {errors.vegetarianin && <p className="text-red-500">{errors.vegetarianin.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Oprowadzanie w piątek' : 'Geführte Touren am Freitag'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Oprowadzanie po mieście w piątek' : 'Stadtbesichtigung am Freitag'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('oprowadzanie')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
               <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('oprowadzanie')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
@@ -140,7 +140,7 @@ const FormComponent: React.FC = () => {
             {errors.oprowadzanie && <p className="text-red-500">{errors.oprowadzanie.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Udział w balu polsko-niemieckim' : 'Deutsch-polnischer Bal'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Udział w balu polsko-niemieckim' : 'Deutsch-polnischer Ball'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('bal')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
               <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('bal')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
@@ -148,7 +148,7 @@ const FormComponent: React.FC = () => {
             {errors.bal && <p className="text-red-500">{errors.bal.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wjazd na Szyndzielnię 13.10' : 'Eintritt in Szyndzielnia 13.10'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wjazd na Szyndzielnię 13.10' : 'Seilbahnfahrt auf Szyndzielnia am 13.10'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('wjazd')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
               <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('wjazd')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>

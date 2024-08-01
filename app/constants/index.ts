@@ -173,8 +173,8 @@ export const CONGRESS_PEOPLE = [
     name: 'Aleksandra Burdziej',
     photo: '/burdziej.jpg',
     email: 'aleksandra.burdziej@gmail.com',
-    functionPL: 'prezes zarządu',
-    functionDE: 'Präsidentin des Vorstand',
+    functionPL: 'Prezes Zarządu',
+    functionDE: 'Vorstandsvorsitzende',
     titlePL: 'dr',
     titleDE: 'Dr.'
   },
@@ -182,8 +182,8 @@ export const CONGRESS_PEOPLE = [
     name: 'Adam Jarosz',
     photo: '/Jarosz.jpg',
     email: 'ad.jarosz5@gmail.com',
-    functionPL: 'wiceprezes zarządu ds. finansowo-administracyjnych',
-    functionDE: 'Vizepräsident der Geschäftsführung für Finanzen und Verwaltung',
+    functionPL: 'Wiceprezes Zarządu ds. finansowo-administracyjnych',
+    functionDE: 'Stellvertretender Vorstandsvorsitzender für Finanz- und Verwaltungsangelegenheiten',
     titlePL: 'dr',
     titleDE: 'Dr.'
   },
@@ -191,8 +191,8 @@ export const CONGRESS_PEOPLE = [
     name: 'Jan Rydel',
     photo: '/Rydel.jpg',
     email: 'janrydel@gmail.com',
-    functionPL: 'wiceprezes zarządu',
-    functionDE: 'Vizepräsident der Geschäftsführung',
+    functionPL: 'Wiceprezes Zarządu',
+    functionDE: 'Stellvertretender Vorstandsvorsitzender',
     titlePL: 'prof.',
     titleDE: 'Prof.'
   },
@@ -200,8 +200,8 @@ export const CONGRESS_PEOPLE = [
     name: 'Sławomir Schultis',
     photo: '/Schultiss.jpg',
     email: 'sschultis@vp.pl',
-    functionPL: 'wiceprezes zarządu',
-    functionDE: 'Vizepräsident des Vorstands',
+    functionPL: 'Wiceprezes Zarządu',
+    functionDE: 'Stellvertretender Vorstandsvorsitzender',
     titlePL: 'dr',
     titleDE: 'Dr.'
   },
@@ -209,22 +209,22 @@ export const CONGRESS_PEOPLE = [
     name: 'Danuta Szczepaniak-Kucik',
     photo: '',
     email: 'danuta_kucik@onet.eu',
-    functionPL: 'członek prezydium zarządu',
-    functionDE: 'Mitglied der Geschäftsführung'
+    functionPL: 'Członek Prezydium Zarządu ',
+    functionDE: 'Mitglied des Vorstandspräsidiums'
   },
   {
     name: 'Zbigniew Leraczyk',
     photo: '',
     email: 'leraczyk.bilska@gmail.com',
-    functionPL: 'członek prezydium zarządu',
-    functionDE: 'Mitglied des Vorstands'
+    functionPL: 'Członek Prezydium Zarządu ',
+    functionDE: 'Mitglied des Vorstandspräsidiums'
   },
   {
     name: 'Cezary Kozak',
     photo: '',
     email: 'avecesar82@gmail.com',
-    functionPL: 'członek prezydium zarządu',
-    functionDE: 'Mitglied der Geschäftsleitung'
+    functionPL: 'Członek Prezydium Zarządu ',
+    functionDE: 'Mitglied des Vorstandspräsidiums'
   },
   {
     name: 'Ewa Fiuk',
@@ -239,14 +239,14 @@ export const CONGRESS_PEOPLE = [
     name: 'Agnieszka Filipiak',
     photo: '/filipiak.png',
     email: 'filipiak.agnieszka8@gmail.com',
-    functionPL: 'członek zarządu',
+    functionPL: 'Członek Zarządu',
     functionDE: 'Vorstandsmitglied'
   },
   {
     name: 'Jolanta Murawska',
     photo: '/map.svg',
-    email: 'filipiak.agnieszka8@gmail.com',
-    functionPL: 'jomur1@wp.pl',
+    email: 'jomur1@wp.pl',
+    functionPL: 'Członek Zarządu',
     functionDE: 'Vorstandsmitglied'
   },
 ];
@@ -268,7 +268,7 @@ export const CONTACT = [
 ]
 
 export const AKTUALNOSCI_PL = 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich!';
-export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften!';
+export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Landesverbandes der Deutsch-Polnischen Gesellschaften!';
 
 export const ABOUT_TITLE_PL = "O nas"
 export const ABOUT_TITLE_DE = "Über uns"
