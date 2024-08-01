@@ -12,7 +12,7 @@ const About = () => {
     <div className="flex justify-center items-stretch">
     <div className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20 mb-8">
        {LOGOS.map((logo,index) => (
-         <Image src={logo.photo} key={logo.alt} alt="map" width={200} height={200} className={`image-class-about ${index === LOGOS.length - 1 ? 'md:col-span-2' : ''}`}/>
+         <Image src={logo.photo} key={logo.alt} alt="map" width={200} height={200} className={`img-about ${index === LOGOS.length - 1 ? 'md:col-span-2' : ''}`}/>
        ))}
       </div>
       </div>
