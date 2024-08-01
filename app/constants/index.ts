@@ -157,7 +157,7 @@ export const LOGOS = [
 export const COMISSION_PEOPLE = [
   {
     name: 'Waldemar Bukowski',
-    photo: '/bukowski.jpg',
+    photo: '/Bukowski.jpg',
     titlePL: 'dr',
     titleDE: 'Dr.'
   },
