@@ -26,7 +26,7 @@ const About = () => {
        <h2 className='bold-20 lg:bold-32 text-center pb-2 mt-2'>{language === 'pl' ?  CHIEFS_TITLE_PL2 :  CHIEFS_TITLE_DE2}</h2>
    <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
             {COMISSION_PEOPLE.map((person) => (
-              <FeatureItem title={person.name} key={person.name} icon={person.photo || fallbackIcon} titleDE={person.titleDE }
+              <FeatureItem title={person.name} key={person.name} icon={person.photo} titleDE={person.titleDE }
                 titlePL={person.titlePL} />
             ))}
     </ul>
