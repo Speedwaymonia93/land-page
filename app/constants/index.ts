@@ -6,6 +6,7 @@ export const NAV_LINKS_PL = [
   { href: '/management', key: 'management ', label: 'Zarząd ' },
     { href: '/congress', key: 'congress', label: 'Kongres' },
   { href: '/contact', key: 'contact_us', label: 'Kontakt' },
+  { href: '/membership', key: 'membership', label: 'Członkostwo' },
 ];
 
 // NAVIGATION DE
@@ -15,7 +16,8 @@ export const NAV_LINKS_DE = [
   { href: '/about', key: 'uber_uns', label: 'Über Uns' },
   { href: '/management', key: 'vorstand ', label: 'Vorstand' },
     { href: '/congress', key: 'kongress', label: 'Kongress' },
-    { href: '/contact', key: 'kontakt', label: 'Kontakt' },
+  { href: '/contact', key: 'kontakt', label: 'Kontakt' },
+    { href: '/membership', key: 'membership', label: 'Mitgliedschaft' },
 ];
 // CAMP SECTION
 export const PEOPLE_URL = [
@@ -67,7 +69,8 @@ export const FOOTER_LINKS_PL = [
   { href: '/about', key: 'about_us', label: 'O nas' },
   { href: '/management', key: 'management ', label: 'Zarząd ' },
     { href: '/congress', key: 'congress', label: 'Kongres' },
-  { href: '/contact', key: 'contact_us', label: 'Kontakt' },
+      { href: '/contact', key: 'contact_us', label: 'Kontakt' },
+  { href: '/membership', key: 'membership', label: 'Członkostwo' }
     ],
   },
 ];
@@ -81,11 +84,11 @@ export const FOOTER_LINKS_DE = [
   { href: '/about', key: 'uber_uns', label: 'Über Uns' },
   { href: '/management', key: 'vorstand ', label: 'Vorstand' },
     { href: '/congress', key: 'kongress', label: 'Kongress' },
-    { href: '/contact', key: 'kontakt', label: 'Kontakt' },
+      { href: '/contact', key: 'kontakt', label: 'Kontakt' },
+    { href: '/membership', key: 'membership', label: 'Mitgliedschaft' }
     ],
   },
 ];
-
 export const FOOTER_CONTACT_INFO = {
   title: 'Skontaktuj się z nami',
   titleDE: 'Kontaktieren Sie uns',
@@ -96,12 +99,12 @@ export const FOOTER_CONTACT_INFO = {
 
 export const WELCOME_TITLE = [
   {
-    polishTitle: 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich',
-    germanTitle: 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften'
+    polishTitle: 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich!',
+    germanTitle: 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften!'
 }]
 
-export const ABOUT_US_TITLE_PL = 'Krajowy Związek Towarzystw Polsko-Niemieckich działa od 1996 roku. Zrzesza organizacje zajmujące się budowaniem dialogu między Polską, a Niemcami na poziomie społeczeństwa obywatelskiego.';
-export const ABOUT_US_TITLE_DE = 'Der Nationale Verband der Polnisch-Deutschen Gesellschaften besteht seit 1996. Er bringt Organisationen zusammen, die sich für den Aufbau des Dialogs zwischen Polen und Deutschland auf der Ebene der Zivilgesellschaft einsetzen.';
+export const ABOUT_US_TITLE_PL = 'Krajowy Związek Towarzystw Polsko-Niemieckich działa od 1996 roku. Zrzesza organizacje zajmujące się budowaniem dialogu między Polską a Niemcami na poziomie społeczeństwa obywatelskiego. Naszym celem jest wspieranie inicjatyw, które promują wzajemne zrozumienie, współpracę i integrację między oboma narodami. Organizujemy kongresy, konferencje, warsztaty oraz wydarzenia kulturalne, które służą wymianie doświadczeń i idei. Dzięki naszym działaniom przyczyniamy się do zacieśniania więzi polsko-niemieckich oraz budowania trwałych i wartościowych partnerstw. Współpracujemy z różnorodnymi instytucjami, fundacjami oraz samorządami, aby tworzyć projekty o znaczeniu regionalnym i międzynarodowym. Jesteśmy otwarci na współpracę z nowymi partnerami, którzy podzielają naszą misję i wartości. Zapraszamy do zapoznania się z naszą działalnością i dołączenia do naszych inicjatyw.';
+export const ABOUT_US_TITLE_DE = 'Der Landesverband der Polnisch-Deutschen Gesellschaften ist seit 1996 tätig. Er vereint Organisationen, die den Dialog zwischen Polen und Deutschland auf zivilgesellschaftlicher Ebene fördern. Unser Ziel ist es, Initiativen zu unterstützen, die gegenseitiges Verständnis, Zusammenarbeit und Integration zwischen beiden Nationen fördern. Wir organisieren Kongresse, Konferenzen, Workshops und kulturelle Veranstaltungen, die dem Austausch von Erfahrungen und Ideen dienen. Durch unsere Aktivitäten tragen wir zur Stärkung der polnisch-deutschen Beziehungen und zum Aufbau dauerhafter und wertvoller Partnerschaften bei. Wir arbeiten mit verschiedenen Institutionen, Stiftungen und Kommunen zusammen, um regionale und internationale Projekte zu realisieren. Wir sind offen für die Zusammenarbeit mit neuen Partnern, die unsere Mission und Werte teilen. Wir laden Sie ein, sich mit unserer Arbeit vertraut zu machen und an unseren Initiativen teilzunehmen.';
 
 export const PEOPLE_LIST =
   ["Aleksandra Burdziej", "Adam Jarosz", "Jan Rydel", 
@@ -130,7 +133,8 @@ export const LOGOS = [
   },
      {
     alt: "Logo4",
-    photo: "/logopt4.jpg"
+       photo: "/logopt4.jpg",
+    desc: "Towarzystw Polska-Niemcy w Gdańsku"
   },
       {
     alt: "Logo5",
@@ -146,14 +150,16 @@ export const LOGOS = [
   },
            {
     alt: "Logo8",
-    photo: "/logopt8.png"
-  }
+    photo: "/logopt8.jpg"
+  },
 ]
 
 export const COMISSION_PEOPLE = [
   {
     name: 'Waldemar Bukowski',
-    photo: '/bukowski.jpg'
+    photo: '/bukowski.jpg',
+    titlePL: 'dr',
+    titleDE: 'Dr.'
   },
   {
     name: 'Teresa Pop'
@@ -168,56 +174,66 @@ export const CONGRESS_PEOPLE = [
     photo: '/burdziej.jpg',
     email: 'aleksandra.burdziej@gmail.com',
     functionPL: 'prezes zarządu',
-    functionDE: 'Präsidentin des Vorstand'
+    functionDE: 'Präsidentin des Vorstand',
+    titlePL: 'dr',
+    titleDE: 'Dr.'
   },
 {
     name: 'Adam Jarosz',
     photo: '/Jarosz.jpg',
     email: 'ad.jarosz5@gmail.com',
     functionPL: 'wiceprezes zarządu ds. finansowo-administracyjnych',
-    functionDE: 'Vizepräsident der Geschäftsführung für Finanzen und Verwaltung'
+    functionDE: 'Vizepräsident der Geschäftsführung für Finanzen und Verwaltung',
+    titlePL: 'dr',
+    titleDE: 'Dr.'
   },
   {
     name: 'Jan Rydel',
     photo: '/Rydel.jpg',
     email: 'janrydel@gmail.com',
     functionPL: 'wiceprezes zarządu',
-    functionDE: 'Vizepräsident der Geschäftsführung'
+    functionDE: 'Vizepräsident der Geschäftsführung',
+    titlePL: 'prof.',
+    titleDE: 'Prof.'
   },
   {
     name: 'Sławomir Schultis',
     photo: '/Schultiss.jpg',
     email: 'sschultis@vp.pl',
     functionPL: 'wiceprezes zarządu',
-    functionDE: 'Vizepräsident des Vorstands'
+    functionDE: 'Vizepräsident des Vorstands',
+    titlePL: 'dr',
+    titleDE: 'Dr.'
   },
   {
     name: 'Danuta Szczepaniak-Kucik',
-    photo: '/map.svg',
+    photo: '',
     email: 'danuta_kucik@onet.eu',
     functionPL: 'członek prezydium zarządu',
     functionDE: 'Mitglied der Geschäftsführung'
   },
   {
     name: 'Zbigniew Leraczyk',
-    photo: '/map.svg',
+    photo: '',
     email: 'leraczyk.bilska@gmail.com',
     functionPL: 'członek prezydium zarządu',
     functionDE: 'Mitglied des Vorstands'
   },
   {
     name: 'Cezary Kozak',
-    photo: '/map.svg',
+    photo: '',
     email: 'avecesar82@gmail.com',
     functionPL: 'członek prezydium zarządu',
     functionDE: 'Mitglied der Geschäftsleitung'
   },
   {
     name: 'Ewa Fiuk',
-    photo: '/map.svg',
+    photo: '/fiuk.jpg',
     email: 'ewa.fiuk@tlen.pl',
     functionPL: 'członek zarządu',
-    functionDE: 'Vorstandsmitglied'
+    functionDE: 'Vorstandsmitglied',
+    titlePL: 'dr',
+    titleDE: 'Dr.'
   },
   {
     name: 'Agnieszka Filipiak',
@@ -239,7 +255,7 @@ export const REVISION_COMISSION = [
   {
     namePL: 'Komisja Rewizyjna',
     nameDE: 'Revisionsausschuss',
-    people: ['Waldemar Bukowski', 'Teresa Pop', 'Kamila Łączna']
+    peoplePL: ['Waldemar Bukowski', 'Teresa Pop', 'Kamila Łączna']
   }
 ];
 
@@ -251,14 +267,17 @@ export const CONTACT = [
   }
 ]
 
-export const AKTUALNOSCI_PL = 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich.';
-export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften';
+export const AKTUALNOSCI_PL = 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich!';
+export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften!';
 
 export const ABOUT_TITLE_PL = "O nas"
 export const ABOUT_TITLE_DE = "Über uns"
 
 export const CHIEFS_TITLE_PL = "Zarząd"
 export const CHIEFS_TITLE_DE = "Vorstand"
+
+export const CHIEFS_SUB_TITLE_PL = "Prezydium Zarządu"
+export const CHIEFS_SUB_TITLE_DE = "Vorstandspräsidium"
 
 export const CHIEFS_TITLE_PL2 = "Komisja Rewizyjna"
 export const CHIEFS_TITLE_DE2 = "Revisionsausschuss"
@@ -282,3 +301,8 @@ export const KONGRES_TITLE_DE = "Kongres"
 export const KONGRES_TITLE_DESC_PL = "Więcej informacji o kongresie oraz formularz rejestracyjny."
 export const KONGRES_TITLE_DESC_DE = "Weitere Informationen zum Kongress und das Anmeldeformular."
 
+export const MEMBERSHIP_PL = "Zapraszamy stowarzyszenia i organizacje do dołączenia do Krajowego Związku Towarzystw Polsko-Niemieckich! Członkostwo w naszej organizacji to nie tylko możliwość nawiązywania nowych kontaktów i współpracy, ale także udział w ważnych inicjatywach, które budują dialog i zrozumienie między Polską a Niemcami. Dołączając do nas, będziesz miał/a okazję uczestniczyć w kongresach, warsztatach i wydarzeniach kulturalnych, które wzmacniają relacje między naszymi narodami."
+export const MEMBERSHIP_DE = "Wir laden Gesellschaften und Organisationen zur Mitgliedschaft im Landesverband der Polnisch-Deutschen Gesellschaften! Eine Mitgliedschaft in unserer Organisation bietet Ihnen nicht nur die Möglichkeit, neue Kontakte zu knüpfen und zusammenzuarbeiten, sondern auch an wichtigen Initiativen teilzunehmen, die den Dialog und das Verständnis zwischen Polen und Deutschland fördern. Als Mitglied haben Sie die Gelegenheit, an Kongressen, Workshops und kulturellen Veranstaltungen teilzunehmen, die die Beziehungen zwischen unseren Nationen stärken."
+
+export const MEMBERSHIP_TITLE_PL = "Członkostwo"
+export const MEMBERSHIP_TITLE_DE = "Mitgliedschaft"

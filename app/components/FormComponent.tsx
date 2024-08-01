@@ -20,12 +20,14 @@ interface FormValues {
   bal: string;
   uwagi?: string;
   nocleg: string;
+  student: string;
 }
 
 const validationSchemaPL = Yup.object<FormValues>().shape({
   imie: Yup.string().required('Imię jest wymagane'),
   nazwisko: Yup.string().required('Nazwisko jest wymagane'),
   organizacja: Yup.string().required('Organizacja / Instytucja jest wymagana'),
+  student: Yup.string().required('Wybór jest wymagany'),
   grupa: Yup.string().required('Grupa jest wymagana'),
   vegetarianin: Yup.string().required('Wybór jest wymagany'),
   oprowadzanie: Yup.string().required('Wybór jest wymagany'),
@@ -39,6 +41,7 @@ const validationSchemaDE = Yup.object<FormValues>().shape({
   imie: Yup.string().required('Vorname ist erforderlich'),
   nazwisko: Yup.string().required('Name ist erforderlich'),
   organizacja: Yup.string().required('Die Organisation/Institution ist verpflichtet'),
+  student: Yup.string().required('Wahlfreiheit ist erforderlich'),
   grupa: Yup.string().required('Die Gruppe ist verpflichtet'),
   vegetarianin: Yup.string().required('Wahlfreiheit ist erforderlich'),
   oprowadzanie: Yup.string().required('Wahlfreiheit ist erforderlich'),
@@ -81,7 +84,7 @@ const FormComponent: React.FC = () => {
   return (
     <>
       <div className='py-6 px-6 flex justify-center mb-10'>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mb-10">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mb-10 md:w-1/2">
           <div>
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Imię' : 'Vorname'}</label>
             <input type="text" {...register('imie')}
@@ -101,6 +104,14 @@ const FormComponent: React.FC = () => {
               className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2" />
             {errors.organizacja && <p className="text-red-500">{errors.organizacja.message}</p>}
           </div>
+           <div>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Student / doktorant / uczeń' : 'Student / Doktorand / Schüler '}</label>
+            <div className='flex flex-row'>
+              <input className="mx-2 px-2" type="radio" value="TAK" {...register('student')} /> {language === 'pl' ? 'TAK' : 'JA'}
+              <input className="mx-2 px-2" type="radio" value="NIE" {...register('student')} />{language === 'pl' ? 'NIE' : 'NEIN'}
+            </div>
+            {errors.student && <p className="text-red-500">{errors.student.message}</p>}
+          </div>
           <div>
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Grupa robocza 12.10' : 'Arbeitsgruppe 12.10'}</label>
             <select {...register('grupa')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
@@ -116,7 +127,7 @@ const FormComponent: React.FC = () => {
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wegetarianin' : 'Vegetarisch'}</label>
             <div className='flex flex-row'>
               <input className="mx-2 px-2" type="radio" value="TAK" {...register('vegetarianin')} /> {language === 'pl' ? 'TAK' : 'JA'}
-              <input className="mx-2 px-2" type="radio" value="NIE" {...register('vegetarianin')} />{language === 'pl' ? 'Nie' : 'NEIN'}
+              <input className="mx-2 px-2" type="radio" value="NIE" {...register('vegetarianin')} />{language === 'pl' ? 'NIE' : 'NEIN'}
             </div>
             {errors.vegetarianin && <p className="text-red-500">{errors.vegetarianin.message}</p>}
           </div>
@@ -124,7 +135,7 @@ const FormComponent: React.FC = () => {
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Oprowadzanie w piątek' : 'Geführte Touren am Freitag'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('oprowadzanie')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
-              <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('oprowadzanie')} /> {language === 'pl' ? 'Nie' : 'NEIN'}</div>
+              <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('oprowadzanie')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
             </div>
             {errors.oprowadzanie && <p className="text-red-500">{errors.oprowadzanie.message}</p>}
           </div>
@@ -132,15 +143,15 @@ const FormComponent: React.FC = () => {
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Udział w balu polsko-niemieckim' : 'Deutsch-polnischer Bal'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('bal')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
-              <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('bal')} /> {language === 'pl' ? 'Nie' : 'NEIN'}</div>
+              <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('bal')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
             </div>
             {errors.bal && <p className="text-red-500">{errors.bal.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wjazd na Szyndzielnię' : 'Eintritt in Szyndzielnia'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wjazd na Szyndzielnię 13.10' : 'Eintritt in Szyndzielnia 13.10'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('wjazd')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
-              <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('wjazd')} /> {language === 'pl' ? 'Nie' : 'NEIN'}</div>
+              <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('wjazd')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
             </div>
             {errors.wjazd && <p className="text-red-500">{errors.wjazd.message}</p>}
           </div>
@@ -155,7 +166,7 @@ const FormComponent: React.FC = () => {
           </div>
           <div></div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Uwagi' : 'Anmerkungen'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Uwagi (w przypadku, gdy pokój dwuosobowy ma być współdzielony z inną uczestniczką, lub innym uczestnikiem kongresu, prosimy w tym miejscu podać nazwisko!)' : 'Anmerkungen (falls ein Doppelzimmer mit einem anderen Kongressteilnehmer / einer anderen Kongressteilnehmerin gewünscht wird, bitte hier den Namen angeben!)'}</label>
             <textarea {...register('uwagi')} placeholder={language === 'pl' ? 'Uwagi' : 'Anmerkungen'}
               className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2 h-32 resize-none" maxLength={500} />
             {errors.uwagi && <p className="text-red-500">{errors.uwagi.message}</p>}

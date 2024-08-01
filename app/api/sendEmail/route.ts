@@ -130,7 +130,7 @@ const mj = mailjet.apiConnect(process.env.MAILJET_API_KEY as string, process.env
 
 export async function POST(req: NextRequest) {
   try {
-	const { imie, nazwisko, organizacja, grupa, vegetarianin, oprowadzanie, wjazd, nocleg, bal, uwagi } = await req.json();
+	const { imie, nazwisko, organizacja, grupa, vegetarianin, oprowadzanie, wjazd, nocleg, bal, uwagi, student} = await req.json();
 
 	const to = process.env.EMAIL_TO;
 	const from = process.env.EMAIL_USER;
@@ -158,6 +158,7 @@ export async function POST(req: NextRequest) {
         	<h1>Formularz zgłoszenia na konkgres</h1>
         	<p><strong>Imię:</strong> ${imie}</p>
         	<p><strong>Nazwisko:</strong> ${nazwisko}</p>
+			<p><strong>Student:</strong> ${student}</p>
         	<p><strong>Organizacja / Instytucja:</strong> ${organizacja}</p>
         	<p><strong>Grupa:</strong> ${grupa}</p>
         	<p><strong>Vegetarianin:</strong> ${vegetarianin}</p>
