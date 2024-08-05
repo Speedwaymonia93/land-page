@@ -100,7 +100,7 @@ export const FOOTER_CONTACT_INFO = {
 export const WELCOME_TITLE = [
   {
     polishTitle: 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich!',
-    germanTitle: 'Willkommen auf der Website des Nationalen Verbandes Deutsch-Polnischer Gesellschaften!'
+    germanTitle: 'Willkommen auf der Website des Landesverbandes der Polnisch-Deutschen Gesellschaften!'
 }]
 
 export const ABOUT_US_TITLE_PL = 'Krajowy Związek Towarzystw Polsko-Niemieckich działa od 1996 roku. Zrzesza organizacje zajmujące się budowaniem dialogu między Polską a Niemcami na poziomie społeczeństwa obywatelskiego. Naszym celem jest wspieranie inicjatyw, które promują wzajemne zrozumienie, współpracę i integrację między oboma narodami. Organizujemy kongresy, konferencje, warsztaty oraz wydarzenia kulturalne, które służą wymianie doświadczeń i idei. Dzięki naszym działaniom przyczyniamy się do zacieśniania więzi polsko-niemieckich oraz budowania trwałych i wartościowych partnerstw. Współpracujemy z różnorodnymi instytucjami, fundacjami oraz samorządami, aby tworzyć projekty o znaczeniu regionalnym i międzynarodowym. Jesteśmy otwarci na współpracę z nowymi partnerami, którzy podzielają naszą misję i wartości. Zapraszamy do zapoznania się z naszą działalnością i dołączenia do naszych inicjatyw.';
@@ -306,3 +306,13 @@ export const MEMBERSHIP_DE = "Wir laden Gesellschaften und Organisationen zur Mi
 
 export const MEMBERSHIP_TITLE_PL = "Członkostwo"
 export const MEMBERSHIP_TITLE_DE = "Mitgliedschaft"
+
+export const ADDRESS_DE = "Ort: Hotel Szyndzielnia in Bielsko-Biała, ul. Armii Krajowej 220"
+export const PRICE_DE = "Kosten: Teilnahmegebühr 80 EUR / 340 PLN, Studenten und Jugendliche 40 EUR / 170 PLN"
+export const ATTENTION_DE = "ACHTUNG! Die Teilnahmegebühr beinhaltet: zwei Übernachtungen im Hotel, Vollverpflegung während des Kongresses, Teilnahme an allen Diskussionen und Attraktionen des Kongresses."
+
+export const ADDRESS_PL = "Miejsce: Hotel Szyndzielnia w Bielsku-Białej, ul. Armii Krajowej 220"
+export const PRICE_PL = "Koszt: opłata wpisowa w wys. 80 EUR / 340 PLN, studenci i młodzież 40 EUR / 170 PLN"
+export const ATTENTION_PL = "UWAGA! W ramach opłaty wpisowej zagwarantowane: dwa noclegi w hotelu, pełne wyżywienie podczas Kongresu, udział we wszystkich dyskusjach i atrakcjach Kongresu"
+
+

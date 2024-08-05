@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="border bg-gray-20" />
         <p className="regular-14 w-full text-center text-gray-30">
           {
-            language === 'pl'? ' 2024 Krajowy Związek Towarzystw Polsko-Niemieckich | All rights reserved ': '2024 Nationaler Verband der Deutsch-Polnischen Gesellschaften | All rights reserved'
+            language === 'pl'? ' 2024 Krajowy Związek Towarzystw Polsko-Niemieckich | All rights reserved ': '2024 Landesverband der Polnisch-Deutschen Gesellschaften | All rights reserved'
           }
         </p>
 

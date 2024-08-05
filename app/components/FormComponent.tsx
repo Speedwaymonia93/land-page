@@ -113,7 +113,7 @@ const FormComponent: React.FC = () => {
             {errors.student && <p className="text-red-500">{errors.student.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Grupa robocza 12.10' : 'Arbeitsgruppe 12.10'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Grupa robocza 12.10.' : 'Arbeitsgruppe am 12.10.'}</label>
             <select {...register('grupa')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
               <option value="">{language === 'pl' ? 'Wybierz grupę' : 'Gruppe auswählen'}</option>
               <option value="Grupa robocza nr IV: Polska i Niemcy wobec WYZWAŃ KLIMATYCZNYCH">{language === 'pl' ? 'Grupa robocza nr IV: Polska i Niemcy wobec WYZWAŃ KLIMATYCZNYCH' : 'Gruppe IV: Polen und Deutschland vor den KLIMA-HERAUSFORDERUNGEN'}</option>
@@ -132,7 +132,7 @@ const FormComponent: React.FC = () => {
             {errors.vegetarianin && <p className="text-red-500">{errors.vegetarianin.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Oprowadzanie po mieście w piątek' : 'Stadtbesichtigung am Freitag'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Oprowadzanie po mieście 11.10.' : 'Stadtbesichtigung am 11.10.'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('oprowadzanie')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
               <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('oprowadzanie')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
@@ -140,7 +140,7 @@ const FormComponent: React.FC = () => {
             {errors.oprowadzanie && <p className="text-red-500">{errors.oprowadzanie.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Udział w balu polsko-niemieckim' : 'Deutsch-polnischer Ball'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Udział w Balu Polsko-Niemieckim' : 'Deutsch-Polnischer Ball'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('bal')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
               <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('bal')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
@@ -148,7 +148,7 @@ const FormComponent: React.FC = () => {
             {errors.bal && <p className="text-red-500">{errors.bal.message}</p>}
           </div>
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wjazd na Szyndzielnię 13.10' : 'Seilbahnfahrt auf Szyndzielnia am 13.10'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wjazd na Szyndzielnię 13.10.' : 'Seilbahnfahrt auf Szyndzielnia am 13.10.'}</label>
             <div className='flex flex-row'>
               <div><input className="mx-2 px-2" type="radio" value="TAK" {...register('wjazd')} /> {language === 'pl' ? 'TAK' : 'JA'}</div>
               <div><input className="mx-2 px-2" type="radio" value="NIE" {...register('wjazd')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</div>
@@ -158,8 +158,8 @@ const FormComponent: React.FC = () => {
            <div>
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Nocleg' : 'Unterkunft'}</label>
             <div className='flex flex-row'>
-              <div><input className="mx-2 px-2" type="radio" value="11-12.10" {...register('nocleg')} /> {language === 'pl' ? '11-12.10' : '11-12.10'}</div>
-              <div><input className="mx-2 px-2" type="radio" value="12-13.10" {...register('nocleg')} /> {language === 'pl' ? '12-13.10' : '12-13.10'}</div>
+              <div><input className="mx-2 px-2" type="radio" value="11-12.10" {...register('nocleg')} /> {language === 'pl' ? '11-12.10.' : '11-12.10.'}</div>
+              <div><input className="mx-2 px-2" type="radio" value="12-13.10" {...register('nocleg')} /> {language === 'pl' ? '12-13.10.' : '12-13.10.'}</div>
               <div><input className="mx-2 px-2" type="radio" value="oba" {...register('nocleg')} /> {language === 'pl' ? 'Oba' : 'Beide'}</div>
             </div>
             {errors.nocleg && <p className="text-red-500">{errors.nocleg.message}</p>}
