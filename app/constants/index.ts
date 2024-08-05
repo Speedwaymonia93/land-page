@@ -100,7 +100,7 @@ export const FOOTER_CONTACT_INFO = {
 export const WELCOME_TITLE = [
   {
     polishTitle: 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich!',
-    germanTitle: 'Willkommen auf der Website des Landesverbandes der Polnisch-Deutschen Gesellschaften!'
+    germanTitle: 'ttttt!'
 }]
 
 export const ABOUT_US_TITLE_PL = 'Krajowy Związek Towarzystw Polsko-Niemieckich działa od 1996 roku. Zrzesza organizacje zajmujące się budowaniem dialogu między Polską a Niemcami na poziomie społeczeństwa obywatelskiego. Naszym celem jest wspieranie inicjatyw, które promują wzajemne zrozumienie, współpracę i integrację między oboma narodami. Organizujemy kongresy, konferencje, warsztaty oraz wydarzenia kulturalne, które służą wymianie doświadczeń i idei. Dzięki naszym działaniom przyczyniamy się do zacieśniania więzi polsko-niemieckich oraz budowania trwałych i wartościowych partnerstw. Współpracujemy z różnorodnymi instytucjami, fundacjami oraz samorządami, aby tworzyć projekty o znaczeniu regionalnym i międzynarodowym. Jesteśmy otwarci na współpracę z nowymi partnerami, którzy podzielają naszą misję i wartości. Zapraszamy do zapoznania się z naszą działalnością i dołączenia do naszych inicjatyw.';
