@@ -268,7 +268,7 @@ export const CONTACT = [
 ]
 
 export const AKTUALNOSCI_PL = 'Witamy na stronie Krajowego Związku Towarzystw Polsko-Niemieckich!';
-export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Landesverbandes der Deutsch-Polnischen Gesellschaften!';
+export const AKTUALNOSCI_DE = 'Willkommen auf der Website des Landesverbandes der Polnisch-Deutschen Gesellschaften!';
 
 export const ABOUT_TITLE_PL = "O nas"
 export const ABOUT_TITLE_DE = "Über uns"
