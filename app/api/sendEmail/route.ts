@@ -130,7 +130,7 @@ const mj = mailjet.apiConnect(process.env.MAILJET_API_KEY as string, process.env
 
 export async function POST(req: NextRequest) {
   try {
-	const { imie, nazwisko, organizacja, grupa, vegetarianin, oprowadzanie, wjazd, nocleg, bal, uwagi, student} = await req.json();
+	const { imie, nazwisko, organizacja, grupa, vegetarianin, oprowadzanie, wjazd, nocleg, bal, uwagi, student, phone, email} = await req.json();
 
 	const to = process.env.EMAIL_TO;
 	const from = process.env.EMAIL_USER;
@@ -153,19 +153,21 @@ export async function POST(req: NextRequest) {
           	Name: 'Adam Jarosz',
         	},
       	],
-      	Subject: 'Formularz zgłoszenia na konkgres',
+      	Subject: 'Formularz rejestracyjny na kongres w Bielsku-Białej (11-13.10.2024)',
       	HTMLPart: `
-        	<h1>Formularz zgłoszenia na konkgres</h1>
+        	<h1>Formularz rejestracyjny na kongres w Bielsku-Białej (11-13.10.2024)</h1>
         	<p><strong>Imię:</strong> ${imie}</p>
         	<p><strong>Nazwisko:</strong> ${nazwisko}</p>
-			<p><strong>Student:</strong> ${student}</p>
+			<p><strong>Nr telefonu:</strong> ${phone}</p>
+			<p><strong>e-mail:</strong> ${email}</p>
         	<p><strong>Organizacja / Instytucja:</strong> ${organizacja}</p>
-        	<p><strong>Grupa:</strong> ${grupa}</p>
-        	<p><strong>Vegetarianin:</strong> ${vegetarianin}</p>
-        	<p><strong>Oprowadzanie w piątek:</strong> ${oprowadzanie}</p>
-        	<p><strong>Wjazd na Szyndzielnię:</strong> ${wjazd}</p>
+			<p><strong>Student / doktorant / uczeń:</strong> ${student}</p>
+        	<p><strong>Grupa robocza 12.10.:</strong> ${grupa}</p>
+        	<p><strong>Wegetarianin:</strong> ${vegetarianin}</p>
+        	<p><strong>Oprowadzanie po mieście 11.10.:</strong> ${oprowadzanie}</p>
+			<p><strong>Udział w Balu Polsko-Niemieckim:</strong> ${bal}</p>
+        	<p><strong>Wjazd na Szyndzielnię 13.10.:</strong> ${wjazd}</p>
         	<p><strong>Nocleg:</strong> ${nocleg}</p>
-			<p><strong>Bal:</strong> ${bal}</p>
 			<p><strong>Uwagi:</strong> ${uwagi}</p>
         	<style>
           	h1 {

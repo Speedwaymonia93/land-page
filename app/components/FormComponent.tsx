@@ -21,6 +21,8 @@ interface FormValues {
   uwagi?: string;
   nocleg: string;
   student: string;
+  phone: string;     
+  email: string;
 }
 
 const validationSchemaPL = Yup.object<FormValues>().shape({
@@ -34,7 +36,10 @@ const validationSchemaPL = Yup.object<FormValues>().shape({
   wjazd: Yup.string().required('Wybór jest wymagany'),
   bal: Yup.string().required('Wybór jest wymagany'),
   uwagi: Yup.string().optional(),
-   nocleg: Yup.string().required('Wybór noclegu jest wymagany'),
+  nocleg: Yup.string().required('Wybór noclegu jest wymagany'),
+  phone: Yup.string().required('Numer telefonu jest wymagany').matches(/^\d+$/, 'Numer telefonu musi składać się z cyfr'),
+  email: Yup.string().required('Email jest wymagany').email('Email musi być prawidłowy'),
+ 
 });
 
 const validationSchemaDE = Yup.object<FormValues>().shape({
@@ -48,7 +53,9 @@ const validationSchemaDE = Yup.object<FormValues>().shape({
   wjazd: Yup.string().required('Wahlfreiheit ist erforderlich'),
   bal: Yup.string().required('Wahlfreiheit ist erforderlich'),
   uwagi: Yup.string().optional(),
-  nocleg: Yup.string().required('Unterkunftsoption ist erforderlich')
+  nocleg: Yup.string().required('Unterkunftsoption ist erforderlich'),
+  phone: Yup.string().required('Telefonnummer ist erforderlich').matches(/^\d+$/, 'Telefonnummer muss numerisch sein'),
+  email: Yup.string().required('Email ist erforderlich').email('Email muss gültig sein'),
 });
 
 const FormComponent: React.FC = () => {
@@ -97,6 +104,18 @@ const FormComponent: React.FC = () => {
             <input type="text" {...register('nazwisko')} placeholder={language === 'pl' ? 'Nazwisko' : 'Name'}
               className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2" />
             {errors.nazwisko && <p className="text-red-500">{errors.nazwisko.message}</p>}
+          </div>
+           <div>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Nr telefonu' : 'Telefonnummer'}</label>
+            <input type="text" {...register('phone')} placeholder={language === 'pl' ? 'Numer telefonu' : 'Telefonnummer'}
+              className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2" />
+            {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+          </div>
+          <div>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'e-mail' : 'E-Mail'}</label>
+            <input type="email" {...register('email')} placeholder={language === 'pl' ? 'Email' : 'E-Mail'}
+              className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2" />
+            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
           </div>
           <div>
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Organizacja / Instytucja' : 'Organisation/Einrichtung'}</label>
@@ -172,7 +191,7 @@ const FormComponent: React.FC = () => {
             {errors.uwagi && <p className="text-red-500">{errors.uwagi.message}</p>}
           </div>
           <button type="submit" className="w-full m-3 border rounded-lg border-lime-600 py-3 px-6 bg-lime-700 text-white font-bold hover:bg-lime-900 hover:text-gray-200">
-            {language === 'pl' ? 'Wyślij zgłoszenie' : 'Bewerbung einreichen'}
+            {language === 'pl' ? 'Wyślij zgłoszenie' : 'Anmeldung schicken'}
           </button>
         </form>
       </div>
@@ -181,7 +200,7 @@ const FormComponent: React.FC = () => {
           <div className='flex flex-col items-center'>
             <AiFillCheckCircle className='ml-3 text-lime-500 text-4xl bg-white rounded-full' />
             <p className="text-emerald-600 font-bold text-xl my-2">
-              {language === 'pl' ? 'Dziękujemy za kontakt. Twoja wiadomość została wysłana.' : 'Vielen Dank, dass Sie uns kontaktiert haben. Ihre Nachricht wurde gesendet.'}
+              {language === 'pl' ? 'Dziękujemy za rejestrację, dane do przelewu przekażemy Państwu niebawem!' : 'Vielen Dank für Ihre Anmeldung, die Überweisungsdetails werden wir demnächst mitteilen!'}
             </p>
             <p className="text-teal-600 font-semibold text-lg">
               {language === 'pl' ? 'Twoje zgłoszenie zostało przyjęte' : 'Ihre Bewerbung wurde angenommen'}
