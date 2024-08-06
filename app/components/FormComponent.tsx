@@ -202,9 +202,6 @@ const FormComponent: React.FC = () => {
             <p className="text-emerald-600 font-bold text-xl my-2">
               {language === 'pl' ? 'Dziękujemy za rejestrację, dane do przelewu przekażemy Państwu niebawem!' : 'Vielen Dank für Ihre Anmeldung, die Überweisungsdetails werden wir demnächst mitteilen!'}
             </p>
-            <p className="text-teal-600 font-semibold text-lg">
-              {language === 'pl' ? 'Twoje zgłoszenie zostało przyjęte' : 'Ihre Bewerbung wurde angenommen'}
-            </p>
           </div>
         )}
         {submissionStatus === 'waiting' && (
