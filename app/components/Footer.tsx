@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import LanguageSelector from './DropdownLanguage'
+import { FaFacebookSquare } from "react-icons/fa";
 const Footer = () => {
     const { language } = useLanguage();
   return (
@@ -52,6 +53,11 @@ const Footer = () => {
                     </p>
                   </Link>
                 ))}
+                 <Link
+              href="https://www.facebook.com/profile.php?id=100086672174330"
+              target="_blank">
+              <FaFacebookSquare className="facebook-icon text-blue-600" size={50} />
+            </Link>
               </FooterColumn>
             </div>
           </div>

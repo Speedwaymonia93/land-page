@@ -23,6 +23,7 @@ interface FormValues {
   student: string;
   phone: string;     
   email: string;
+  dataConsent: boolean;
 }
 
 const validationSchemaPL = Yup.object<FormValues>().shape({
@@ -39,7 +40,7 @@ const validationSchemaPL = Yup.object<FormValues>().shape({
   nocleg: Yup.string().required('Wybór noclegu jest wymagany'),
   phone: Yup.string().required('Numer telefonu jest wymagany').matches(/^\d+$/, 'Numer telefonu musi składać się z cyfr'),
   email: Yup.string().required('Email jest wymagany').email('Email musi być prawidłowy'),
- 
+ dataConsent: Yup.bool().oneOf([true], 'Musisz wyrazić zgodę na przetwarzanie danych osobowych').required(),
 });
 
 const validationSchemaDE = Yup.object<FormValues>().shape({
@@ -55,7 +56,7 @@ const validationSchemaDE = Yup.object<FormValues>().shape({
   uwagi: Yup.string().optional(),
   nocleg: Yup.string().required('Unterkunftsoption ist erforderlich'),
   phone: Yup.string().required('Telefonnummer ist erforderlich').matches(/^\d+$/, 'Telefonnummer muss numerisch sein'),
-  email: Yup.string().required('Email ist erforderlich').email('Email muss gültig sein'),
+  email: Yup.string().required('Email ist erforderlich').email('Email muss gültig sein'), dataConsent: Yup.bool().oneOf([true], 'Sie müssen der Verarbeitung personenbezogener Daten zustimmen').required(),
 });
 
 const FormComponent: React.FC = () => {
@@ -190,6 +191,21 @@ const FormComponent: React.FC = () => {
               className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2 h-32 resize-none" maxLength={500} />
             {errors.uwagi && <p className="text-red-500">{errors.uwagi.message}</p>}
           </div>
+<div className="flex items-center">
+            <input type="checkbox" {...register('dataConsent')} className="mr-2" />
+            <label className="text-lime-600 font-bold">
+              {language === 'pl'
+                ? 'Zapoznałem(am) się z informacją o przetwarzaniu danych osobowych i wyrażam zgodę na ich przetwarzanie.'
+                : 'Ich habe die Informationen zur Verarbeitung personenbezogener Daten gelesen und bin mit ihrer Verarbeitung einverstanden.'}
+            </label>
+            <a href="/Klauzula_RODO.pdf" target="_blank" rel='noopener noreferrer'>
+        <button type="button" className='mt-6 p-4 rounded-lg bg-rose-700 hover:bg-rose-400 active:bg-rose-400 focus:outline-none focus:ring focus:ring-rose-700 hover:text-white'>
+          {language === 'pl' ? 'Pobierz' : 'Herunterladen'}
+        </button>
+    </a>
+          </div>
+          {errors.dataConsent && <p className="text-red-500">{errors.dataConsent.message}</p>}
+
           <button type="submit" className="w-full m-3 border rounded-lg border-lime-600 py-3 px-6 bg-lime-700 text-white font-bold hover:bg-lime-900 hover:text-gray-200">
             {language === 'pl' ? 'Wyślij zgłoszenie' : 'Anmeldung schicken'}
           </button>

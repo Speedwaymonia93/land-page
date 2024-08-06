@@ -207,7 +207,7 @@ export const CONGRESS_PEOPLE = [
   },
   {
     name: 'Danuta Szczepaniak-Kucik',
-    photo: '',
+    photo: '/kucik.jpg',
     email: 'danuta_kucik@onet.eu',
     functionPL: 'Członek Prezydium Zarządu ',
     functionDE: 'Mitglied des Vorstandspräsidiums'
@@ -221,7 +221,7 @@ export const CONGRESS_PEOPLE = [
   },
   {
     name: 'Cezary Kozak',
-    photo: '',
+    photo: '/kozak.jpg',
     email: 'avecesar82@gmail.com',
     functionPL: 'Członek Prezydium Zarządu ',
     functionDE: 'Mitglied des Vorstandspräsidiums'

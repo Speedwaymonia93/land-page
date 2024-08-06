@@ -4,6 +4,8 @@ import Image from "next/image";
 import Button from "./Link";
 import { KONTAKT_BUTTON_PL, KONTAKT_BUTTON_DE, KONTAKT_INFO } from '../constants/index'
 import { useLanguage } from '../context/LanguageContext'
+import Link from 'next/link';
+import { FaFacebookSquare } from "react-icons/fa";
 const ContactUs = () => {
 const { language } = useLanguage();
   return (
@@ -21,6 +23,11 @@ const { language } = useLanguage();
             href='/contact'
           />
         </div>
+        <Link
+              href="https://www.facebook.com/profile.php?id=100092516230953"
+              target="_blank">
+              <FaFacebookSquare className="facebook-icon" size={50} />
+            </Link>
       </div>
     </section>
   )
