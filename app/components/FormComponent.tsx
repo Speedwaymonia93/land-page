@@ -196,9 +196,9 @@ const FormComponent: React.FC = () => {
             <label className="text-lime-600 font-bold">
               {language === 'pl'
                 ? 'Zapoznałem(am) się z informacją o przetwarzaniu danych osobowych i wyrażam zgodę na ich przetwarzanie.'
-                : 'Ich habe die Informationen zur Verarbeitung personenbezogener Daten gelesen und bin mit ihrer Verarbeitung einverstanden.'}
+                : 'Ich habe die Informationen zur Verarbeitung personenbezogener Daten gelesen und stimme der Verarbeitung meiner Daten zu.'}
             </label>
-            <a href="/Klauzula_RODO.pdf" target="_blank" rel='noopener noreferrer'>
+            <a href="/KlauzulaRODO.pdf" target="_blank" rel='noopener noreferrer'>
         <button type="button" className='mt-6 p-4 rounded-lg bg-rose-700 hover:bg-rose-400 active:bg-rose-400 focus:outline-none focus:ring focus:ring-rose-700 hover:text-white'>
           {language === 'pl' ? 'Pobierz' : 'Herunterladen'}
         </button>
