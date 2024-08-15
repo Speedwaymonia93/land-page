@@ -315,4 +315,5 @@ export const ADDRESS_PL = "Miejsce: Hotel Szyndzielnia w Bielsku-Białej, ul. Ar
 export const PRICE_PL = "Koszt: opłata wpisowa w wys. 80 EUR / 340 PLN, studenci i młodzież 40 EUR / 170 PLN"
 export const ATTENTION_PL = "UWAGA! W ramach opłaty wpisowej zagwarantowane: dwa noclegi w hotelu, pełne wyżywienie podczas Kongresu, udział we wszystkich dyskusjach i atrakcjach Kongresu"
 
-
+export const CONGRESS_TITLE_PL = "Kongres"
+export const CONGRESS_TITLE_DE = "Kongress"
