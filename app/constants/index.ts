@@ -162,10 +162,12 @@ export const COMISSION_PEOPLE = [
     titleDE: 'Dr.'
   },
   {
-    name: 'Teresa Pop'
+    name: 'Teresa Pop',
+    photo: '/TPop.png',
   },
   {
-    name: 'Kamila Łączna'
+    name: 'Kamila Łączna',
+     photo: '/KLaczna.jpeg',
   },
 ]
 export const CONGRESS_PEOPLE = [
@@ -214,7 +216,7 @@ export const CONGRESS_PEOPLE = [
   },
   {
     name: 'Zbigniew Leraczyk',
-    photo: '',
+    photo: '/ZLeraczyk.jpg',
     email: 'leraczyk.bilska@gmail.com',
     functionPL: 'Członek Prezydium Zarządu ',
     functionDE: 'Mitglied des Vorstandspräsidiums'
