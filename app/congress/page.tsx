@@ -2,12 +2,15 @@
 import React from "react";
 import FormComponent from "../components/FormComponent";
 import { useLanguage } from '../context/LanguageContext';
-import { ADDRESS_DE, ADDRESS_PL, PRICE_DE, PRICE_PL, ATTENTION_DE, ATTENTION_PL, CONGRESS_TITLE_PL, CONGRESS_TITLE_DE, CONGRESS_DESCRIPTION_PL, CONGRESS_DESCRIPTION_DE} from '../constants/index';
+import Image from 'next/image';
+import { ADDRESS_DE, ADDRESS_PL, PRICE_DE, PRICE_PL, ATTENTION_DE, ATTENTION_PL, CONGRESS_TITLE_PL, CONGRESS_TITLE_DE, CONGRESS_DESCRIPTION_PL, CONGRESS_DESCRIPTION_DE, CONGRESS_POSTER} from '../constants/index';
 const Congress: React.FC = () => {
   const { language } = useLanguage();
   return <div className="flex justify-center flex-col">
     <h2 className='text-4xl text-center pb-2'>{language === 'pl' ? CONGRESS_TITLE_PL : CONGRESS_TITLE_DE}</h2>
-    <div></div>
+    <div className="flex justify-center mt-8">
+      <Image src={CONGRESS_POSTER} alt="Congress Poster" width={600} height={1000}/>
+    </div>
     <a className="text-center mb-8" href={language === 'pl' ? '/Ramowy program_Kongres_Bielsko-Biala.pdf' : '/Rahmenprogramm_Kongress_Bielsko-Biala.pdf'} target="_blank" rel='noopener noreferrer'>
         <button className='mt-6 p-4 rounded-lg bg-rose-700 hover:bg-rose-400 active:bg-rose-400 focus:outline-none focus:ring focus:ring-rose-700 hover:text-white'>
           {language === 'pl' ? 'Program ramowy ' : 'Rahmenprogramm'}

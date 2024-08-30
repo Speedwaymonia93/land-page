@@ -148,10 +148,14 @@ export const LOGOS = [
     alt: "Logo7",
     photo: "/logopt.7.jpg"
   },
-           {
+   {
+    alt: "Logo9",
+    photo: "/logopt9.png"
+  },
+  {
     alt: "Logo8",
     photo: "/logopt8.jpg"
-  },
+  }
 ]
 
 export const COMISSION_PEOPLE = [
@@ -334,3 +338,5 @@ export const CONGRESS_DESCRIPTION_DE = [
   "Besondere Höhepunkte werden die Eröffnung einer Ausstellung und der Deutsch-Polnische Ball sein, die darauf abzielen, den kulturellen Austausch zu fördern und die Beziehungen zwischen den polnischen und deutschen Teilnehmern auf persönlicher Ebene zu stärken.",
    "Wir laden Sie ein, an dieser polnisch-deutschen Initiative teilzunehmen und sie mitzugestalten. Lassen Sie uns zusammenkommen, um den Dialog zu fördern, Ideen und Gedanken in offener Atmosphäre auszutauschen und so die polnisch-deutschen Beziehungen auf eine neue Ebene zu heben!"
 ];
+
+export const CONGRESS_POSTER = "/Towarzystwo_Pol_Niem_Plakat.jpg"

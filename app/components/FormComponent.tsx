@@ -181,6 +181,7 @@ const FormComponent: React.FC = () => {
               <div><input className="mx-2 px-2" type="radio" value="11-12.10" {...register('nocleg')} /> {language === 'pl' ? '11-12.10.' : '11-12.10.'}</div>
               <div><input className="mx-2 px-2" type="radio" value="12-13.10" {...register('nocleg')} /> {language === 'pl' ? '12-13.10.' : '12-13.10.'}</div>
               <div><input className="mx-2 px-2" type="radio" value="oba" {...register('nocleg')} /> {language === 'pl' ? 'Oba' : 'Beide'}</div>
+              <div><input className="mx-2 px-2" type="radio" value="bez" {...register('nocleg')} /> {language === 'pl' ? 'bez noclegu' : 'ohne Unterkunft'}</div>
             </div>
             {errors.nocleg && <p className="text-red-500">{errors.nocleg.message}</p>}
           </div>

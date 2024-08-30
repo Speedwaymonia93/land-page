@@ -197,7 +197,7 @@ border-radius: 50%;
   flex-direction: row;
 }
 
-.img-about:last-child {
+.img-about:last-child, .img-about:nth-last-child(2) {
  width:300px;
 }
 
