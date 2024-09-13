@@ -150,7 +150,7 @@ export const LOGOS = [
   },
    {
     alt: "Logo9",
-    photo: "/logopt9.png"
+    photo: "/logopt9.jpeg"
   },
   {
     alt: "Logo8",
@@ -250,7 +250,7 @@ export const CONGRESS_PEOPLE = [
   },
   {
     name: 'Jolanta Murawska',
-    photo: '/map.svg',
+    photo: '/Murawska.jpg',
     email: 'jomur1@wp.pl',
     functionPL: 'Członek Zarządu',
     functionDE: 'Vorstandsmitglied'
