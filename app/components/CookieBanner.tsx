@@ -28,7 +28,7 @@ const CookieBanner: React.FC = () => {
       <p>
         {language === 'pl'? COOKIE_PL : COOKIE_DE}
       </p>
-      <button onClick={acceptCookies}>  {language === 'pl'? 'Zaakceptuj' : "Ja"}</button>
+      <button onClick={acceptCookies}>  {language === 'pl'? 'Akceptuję' : "Akzeptieren"}</button>
     </div>
   );
 };

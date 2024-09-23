@@ -341,5 +341,5 @@ export const CONGRESS_DESCRIPTION_DE = [
 
 export const CONGRESS_POSTER = "/Towarzystwo_Pol_Niem_Plakat.jpg"
 
-export const COOKIE_PL = " We use cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies.";
-export const COOKIE_DE = "BLBLBLBL";
+export const COOKIE_PL = " Używamy plików cookie, aby ulepszyć Twoje doświadczenia. Kontynuując korzystanie z tej strony, wyrażasz zgodę na używanie plików cookie.";
+export const COOKIE_DE = " Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Indem Sie diese Seite weiterhin besuchen, stimmen Sie der Verwendung von Cookies zu.";
