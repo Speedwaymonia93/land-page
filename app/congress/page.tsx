@@ -11,7 +11,7 @@ const Congress: React.FC = () => {
     <div className="flex justify-center mt-8">
       <Image src={CONGRESS_POSTER} alt="Congress Poster" width={600} height={1000}/>
     </div>
-    <a className="text-center mb-8" href='/Program_BB 2024.pdf' target="_blank" rel='noopener noreferrer'>
+    <a className="text-center mb-8" href={language === 'pl' ? '/ULOTKA_PL.pdf': '/ULOTKA_DE.pdf'} target="_blank" rel='noopener noreferrer'>
         <button className='mt-6 p-4 rounded-lg bg-rose-700 hover:bg-rose-400 active:bg-rose-400 focus:outline-none focus:ring focus:ring-rose-700 hover:text-white'>
           {language === 'pl' ? 'Program ramowy ' : 'Programm'}
         </button>
