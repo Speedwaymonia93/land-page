@@ -339,7 +339,7 @@ export const CONGRESS_DESCRIPTION_DE = [
    "Wir laden Sie ein, an dieser polnisch-deutschen Initiative teilzunehmen und sie mitzugestalten. Lassen Sie uns zusammenkommen, um den Dialog zu fördern, Ideen und Gedanken in offener Atmosphäre auszutauschen und so die polnisch-deutschen Beziehungen auf eine neue Ebene zu heben!"
 ];
 
-export const CONGRESS_POSTER = "/Towarzystwo_Pol_Niem_Plakat.jpg"
+export const CONGRESS_POSTER = "/KONGRES_POSTER_PL_DE.jpg"
 
 export const COOKIE_PL = " Używamy plików cookie, aby ulepszyć Twoje doświadczenia. Kontynuując korzystanie z tej strony, wyrażasz zgodę na używanie plików cookie.";
 export const COOKIE_DE = " Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Indem Sie diese Seite weiterhin besuchen, stimmen Sie der Verwendung von Cookies zu.";
