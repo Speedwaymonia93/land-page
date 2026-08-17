@@ -126,11 +126,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mailjet from 'node-mailjet';
 
-const mj = mailjet.apiConnect(process.env.MAILJET_API_KEY as string, process.env.MAILJET_API_SECRET as string);
+const mailjetApiKey = process.env.MAILJET_API_KEY;
+const mailjetApiSecret = process.env.MAILJET_API_SECRET;
+const mj = mailjetApiKey && mailjetApiSecret ? mailjet.apiConnect(mailjetApiKey, mailjetApiSecret) : null;
 
 export async function POST(req: NextRequest) {
   try {
-	const { imie, nazwisko, organizacja, grupa, vegetarianin, oprowadzanie, wjazd, nocleg, bal, uwagi, student, phone, email} = await req.json();
+	const {
+		imie,
+		nazwisko,
+		student,
+		organizacja,
+		vegetarianin,
+		oprowadzanie,
+		panelSobotaRano,
+		panelSobotaPopoludniu,
+		zwiedzanieEcsNiedziela,
+		bal,
+		uwagi,
+	} = await req.json();
 
 	const to = process.env.EMAIL_TO;
 	const from = process.env.EMAIL_USER;
@@ -140,57 +154,58 @@ export async function POST(req: NextRequest) {
   	return NextResponse.json({ message: 'Email configuration is missing' }, { status: 500 });
 	}
 
+	if (!mj) {
+	  console.error('Mailjet API credentials are missing');
+	  return NextResponse.json({ message: 'Mailjet API credentials are missing' }, { status: 500 });
+	}
+
 	const request = mj.post('send', { version: 'v3.1' }).request({
   	Messages: [
     	{
-      	From: {
-        	Email: from,
-					Name: `${imie} ${nazwisko}` ,
-      	},
-      	To: [
-        	{
-          	Email: to,
-          	Name: 'Adam Jarosz',
-        	},
-      	],
-      	Subject: 'Formularz rejestracyjny na kongres w Bielsku-Białej (11-13.10.2024)',
-      	HTMLPart: `
-        	<h1>Formularz rejestracyjny na kongres w Bielsku-Białej (11-13.10.2024)</h1>
-        	<p><strong>Imię:</strong> ${imie}</p>
-        	<p><strong>Nazwisko:</strong> ${nazwisko}</p>
-			<p><strong>Nr telefonu:</strong> ${phone}</p>
-			<p><strong>e-mail:</strong> ${email}</p>
-        	<p><strong>Organizacja / Instytucja:</strong> ${organizacja}</p>
-			<p><strong>Student / doktorant / uczeń:</strong> ${student}</p>
-        	<p><strong>Grupa robocza 12.10.:</strong> ${grupa}</p>
-        	<p><strong>Wegetarianin:</strong> ${vegetarianin}</p>
-        	<p><strong>Oprowadzanie po mieście 11.10.:</strong> ${oprowadzanie}</p>
-			<p><strong>Udział w Balu Polsko-Niemieckim:</strong> ${bal}</p>
-        	<p><strong>Wjazd na Szyndzielnię 13.10.:</strong> ${wjazd}</p>
-        	<p><strong>Nocleg:</strong> ${nocleg}</p>
-			<p><strong>Uwagi:</strong> ${uwagi}</p>
-        	<style>
-          	h1 {
-            	color: #333;
-          	}
-          	p {
-            	font-size: 16px;
-          	}
-          	strong {
-            	color: #555;
-          	}
-        	</style>
-      	`,
+      		From: {
+        		Email: from,
+					Name: `${imie} ${nazwisko}`,
+      		},
+      		To: [
+        		{
+          		Email: to,
+          		Name: 'Adam Jarosz',
+        		},
+      		],
+      		Subject: 'Formularz zgłoszenia na kongres',
+      		HTMLPart: `
+        		<h1>Formularz zgłoszenia na kongres</h1>
+        		<p><strong>Imię:</strong> ${imie}</p>
+        		<p><strong>Nazwisko:</strong> ${nazwisko}</p>
+        		<p><strong>Student:</strong> ${student}</p>
+        		<p><strong>Organizacja / Instytucja:</strong> ${organizacja}</p>
+        		<p><strong>Vegetarianin:</strong> ${vegetarianin}</p>
+        		<p><strong>Oprowadzanie w piątek:</strong> ${oprowadzanie}</p>
+        		<p><strong>Panel sobota rano:</strong> ${panelSobotaRano}</p>
+        		<p><strong>Panel sobota popołudniu:</strong> ${panelSobotaPopoludniu}</p>
+        		<p><strong>Zwiedzanie ECS niedziela:</strong> ${zwiedzanieEcsNiedziela}</p>
+        		<p><strong>Bal/Ball:</strong> ${bal}</p>
+        		<p><strong>Uwagi:</strong> ${uwagi}</p>
+        		<style>
+          		h1 {
+            		color: #333;
+          		}
+          		p {
+            		font-size: 16px;
+          		}
+          		strong {
+            		color: #555;
+          		}
+        		</style>
+      		`,
     	},
   	],
 	});
 
-	const response = await request;
-	return NextResponse.json({ message: 'Email sent successfully!' });
+	await request;
+	return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
   } catch (error) {
+	console.error('Error sending email:', error);
 	return NextResponse.json({ message: 'Error sending email' }, { status: 500 });
   }
 }
-
-
-
