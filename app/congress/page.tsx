@@ -26,3 +26,4 @@ const Congress: React.FC = () => {
 };
 
 export default Congress;
+
