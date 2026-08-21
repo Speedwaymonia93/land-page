@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import { ADDRESS_DE, ADDRESS_PL, PRICE_DE, PRICE_PL, ATTENTION_DE, ATTENTION_PL, CONGRESS_TITLE_PL, CONGRESS_TITLE_DE, CONGRESS_DESCRIPTION_PL, CONGRESS_DESCRIPTION_DE } from '../constants/index';
 import FormComponent from '../components/FormComponent';
@@ -10,6 +11,17 @@ const Congress: React.FC = () => {
   return (
     <div className="flex justify-center flex-col text-center mb-8">
       <h2 className='text-4xl text-center pb-2'>{language === 'pl' ? CONGRESS_TITLE_PL : CONGRESS_TITLE_DE}</h2>
+
+      <div className="px-6 pt-6 pb-6 flex justify-center">
+        <Image
+          src="/poster-kongres.jpg"
+          alt={language === 'pl' ? 'Plakat kongresu' : 'Kongressplakat'}
+          width={900}
+          height={1273}
+          className="w-full max-w-3xl h-auto rounded-lg shadow-md"
+          priority
+        />
+      </div>
 
       <h1 className="text-3xl text-center text-lime-700 mb-4 tracking-wider">
         {language === 'pl' ? 'Formularz zgłoszenia na kongres' : 'Anmeldeformular zum Kongress'}
