@@ -139,8 +139,10 @@ export async function POST(req: NextRequest) {
 		organizacja,
 		vegetarianin,
 		oprowadzanie,
-		panelSobotaRano,
-		panelSobotaPopoludniu,
+		panelSobotaRanoPierwszyWybor,
+		panelSobotaRanoDrugiWybor,
+		panelSobotaPopoludniuPierwszyWybor,
+		panelSobotaPopoludniuDrugiWybor,
 		zwiedzanieEcsNiedziela,
 		bal,
 		uwagi,
@@ -181,8 +183,10 @@ export async function POST(req: NextRequest) {
         		<p><strong>Organizacja / Instytucja:</strong> ${organizacja}</p>
         		<p><strong>Vegetarianin:</strong> ${vegetarianin}</p>
         		<p><strong>Oprowadzanie w piątek:</strong> ${oprowadzanie}</p>
-        		<p><strong>Panel sobota rano:</strong> ${panelSobotaRano}</p>
-        		<p><strong>Panel sobota popołudniu:</strong> ${panelSobotaPopoludniu}</p>
+	      		<p><strong>Panel sobota rano - pierwszy wybór:</strong> ${panelSobotaRanoPierwszyWybor}</p>
+	      		<p><strong>Panel sobota rano - drugi wybór:</strong> ${panelSobotaRanoDrugiWybor}</p>
+	      		<p><strong>Panel sobota popołudniu - pierwszy wybór:</strong> ${panelSobotaPopoludniuPierwszyWybor}</p>
+	      		<p><strong>Panel sobota popołudniu - drugi wybór:</strong> ${panelSobotaPopoludniuDrugiWybor}</p>
         		<p><strong>Zwiedzanie ECS niedziela:</strong> ${zwiedzanieEcsNiedziela}</p>
         		<p><strong>Bal/Ball:</strong> ${bal}</p>
         		<p><strong>Uwagi:</strong> ${uwagi}</p>

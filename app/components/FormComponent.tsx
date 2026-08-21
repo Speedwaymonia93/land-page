@@ -16,12 +16,40 @@ interface FormValues {
   organizacja: string;
   vegetarianin: string;
   oprowadzanie: string;
-  panelSobotaRano: string;
-  panelSobotaPopoludniu: string;
+  panelSobotaRanoPierwszyWybor: string;
+  panelSobotaRanoDrugiWybor: string;
+  panelSobotaPopoludniuPierwszyWybor: string;
+  panelSobotaPopoludniuDrugiWybor: string;
   zwiedzanieEcsNiedziela: string;
   bal: string;
   uwagi?: string;
 }
+
+const morningPanelsPL = [
+  'Panel IIIA: „Partnerzy i konkurenci: jak Polska i Niemcy mogą wzmacniać konkurencyjność Europy?”',
+  'Panel IIIB: „Między historią a przyszłością: zadośćuczynienie i odpowiedzialność - co jest dziś możliwe?”',
+  'Panel IIIC (młodzieżowy): „Forum Młodych ‘Europa 2050’: czego młodzi oczekują od Polski i Niemiec?”',
+];
+
+const morningPanelsDE = [
+  'Panel IIIA: „Partner und Konkurrenten: Wie können Polen und Deutschland die Wettbewerbsfähigkeit Europas stärken?”',
+  'Panel IIIB: „Zwischen Geschichte und Zukunft: Wiedergutmachung und Verantwortung - was ist heute möglich?”',
+  'Panel IIIC (Jugendpanel): „Jugendforum \"Europa 2050\": Was erwarten junge Menschen von Polen und Deutschland?”',
+];
+
+const afternoonPanelsPL = [
+  'Panel IVA: „Europa Środkowa na zakręcie: jak odbudować zdolność do współpracy? Perspektywy Polski, Niemiec i Węgier”',
+  'Panel IVB: „Bałtyk jako laboratorium bezpieczeństwa Europy: co Polska i Niemcy mogą zrobić wspólnie?”',
+  'Panel IVC: „Prawica, protest, zmiana: czego wyborcy w Polsce i Niemczech oczekują od demokracji?”',
+  'Panel IVD: „Nauka dla dialogu: jak germanistyka, niemcoznawstwo i sieci akademickie mogą wspierać współpracę polsko-niemiecką?”',
+];
+
+const afternoonPanelsDE = [
+  'Panel IVA: „Mitteleuropa am Scheideweg: Wie kann die Fähigkeit zur Zusammenarbeit wiederaufgebaut werden? Perspektiven Polens, Deutschlands und Ungarns”',
+  'Panel IVB: „Die Ostsee als Sicherheitslabor Europas: Was können Polen und Deutschland gemeinsam tun?”',
+  'Panel IVC: „Rechte, Protest, Wandel: Was erwarten Wähler in Polen und Deutschland von der Demokratie?”',
+  'Panel IVD: „Wissenschaft für den Dialog: Wie können Germanistik, Deutschlandstudien und akademische Netzwerke die deutsch-polnische Zusammenarbeit stärken?”',
+];
 
 const validationSchemaPL = Yup.object<FormValues>().shape({
   imie: Yup.string().required('Imię jest wymagane'),
@@ -30,8 +58,14 @@ const validationSchemaPL = Yup.object<FormValues>().shape({
   organizacja: Yup.string().required('Organizacja / Instytucja jest wymagana'),
   vegetarianin: Yup.string().required('Wybór jest wymagany'),
   oprowadzanie: Yup.string().required('Wybór jest wymagany'),
-  panelSobotaRano: Yup.string().required('Wybór jest wymagany'),
-  panelSobotaPopoludniu: Yup.string().required('Wybór jest wymagany'),
+  panelSobotaRanoPierwszyWybor: Yup.string().required('Wybór jest wymagany'),
+  panelSobotaRanoDrugiWybor: Yup.string()
+    .required('Wybór jest wymagany')
+    .notOneOf([Yup.ref('panelSobotaRanoPierwszyWybor')], 'Drugi wybór musi być inny niż pierwszy'),
+  panelSobotaPopoludniuPierwszyWybor: Yup.string().required('Wybór jest wymagany'),
+  panelSobotaPopoludniuDrugiWybor: Yup.string()
+    .required('Wybór jest wymagany')
+    .notOneOf([Yup.ref('panelSobotaPopoludniuPierwszyWybor')], 'Drugi wybór musi być inny niż pierwszy'),
   zwiedzanieEcsNiedziela: Yup.string().required('Wybór jest wymagany'),
   bal: Yup.string().required('Wybór jest wymagany'),
   uwagi: Yup.string().optional(),
@@ -44,8 +78,14 @@ const validationSchemaDE = Yup.object<FormValues>().shape({
   organizacja: Yup.string().required('Organisation / Institution ist erforderlich'),
   vegetarianin: Yup.string().required('Bitte wählen Sie eine Option'),
   oprowadzanie: Yup.string().required('Bitte wählen Sie eine Option'),
-  panelSobotaRano: Yup.string().required('Bitte wählen Sie eine Option'),
-  panelSobotaPopoludniu: Yup.string().required('Bitte wählen Sie eine Option'),
+  panelSobotaRanoPierwszyWybor: Yup.string().required('Bitte wählen Sie eine Option'),
+  panelSobotaRanoDrugiWybor: Yup.string()
+    .required('Bitte wählen Sie eine Option')
+    .notOneOf([Yup.ref('panelSobotaRanoPierwszyWybor')], 'Die zweite Auswahl muss sich von der ersten unterscheiden'),
+  panelSobotaPopoludniuPierwszyWybor: Yup.string().required('Bitte wählen Sie eine Option'),
+  panelSobotaPopoludniuDrugiWybor: Yup.string()
+    .required('Bitte wählen Sie eine Option')
+    .notOneOf([Yup.ref('panelSobotaPopoludniuPierwszyWybor')], 'Die zweite Auswahl muss sich von der ersten unterscheiden'),
   zwiedzanieEcsNiedziela: Yup.string().required('Bitte wählen Sie eine Option'),
   bal: Yup.string().required('Bitte wählen Sie eine Option'),
   uwagi: Yup.string().optional(),
@@ -53,6 +93,8 @@ const validationSchemaDE = Yup.object<FormValues>().shape({
 
 const FormComponent: React.FC = () => {
   const { language } = useLanguage();
+  const morningPanels = language === 'pl' ? morningPanelsPL : morningPanelsDE;
+  const afternoonPanels = language === 'pl' ? afternoonPanelsPL : afternoonPanelsDE;
   const [submissionStatus, setSubmissionStatus] = useState<string>('');
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({
     resolver: language === 'pl' ? yupResolver(validationSchemaPL) : yupResolver(validationSchemaDE),
@@ -131,26 +173,45 @@ const FormComponent: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Panel sobota rano: (do wyboru)' : 'Panel Samstagvormittag: (Auswahl)'}</label>
-            <select {...register('panelSobotaRano')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Panele sobota rano (do wyboru):' : 'Panels Samstagvormittag (Auswahl):'}</label>
+            <p className="text-lime-600 mt-2">{language === 'pl' ? 'Panel pierwszego wyboru' : 'Panel erste Wahl'}</p>
+            <select {...register('panelSobotaRanoPierwszyWybor')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
               <option value="">{language === 'pl' ? 'Wybierz panel' : 'Panel auswählen'}</option>
-              <option value={language === 'pl' ? 'Panel IIIA: „Partnerzy czy konkurenci? Polska i Niemcy w gospodarce XXI wieku”' : 'Panel IIIA: „Partner oder Konkurrent? Polen und Deutschland in der Wirtschaft des 21. Jahrhunderts”'}>{language === 'pl' ? 'Panel IIIA: „Partnerzy czy konkurenci? Polska i Niemcy w gospodarce XXI wieku”' : 'Panel IIIA: „Partner oder Konkurrent? Polen und Deutschland in der Wirtschaft des 21. Jahrhunderts”'}</option>
-              <option value={language === 'pl' ? 'Panel IIIB: „Między historią a przyszłością: reparacje, zadośćuczynienie, odpowiedzialność”' : 'Panel IIIB: „Zwischen Geschichte und Zukunft: Reparationsleistungen, Wiedergutmachung, Verantwortung”'}>{language === 'pl' ? 'Panel IIIB: „Między historią a przyszłością: reparacje, zadośćuczynienie, odpowiedzialność”' : 'Panel IIIB: „Zwischen Geschichte und Zukunft: Reparationsleistungen, Wiedergutmachung, Verantwortung”'}</option>
-              <option value={language === 'pl' ? 'Panel IIIC (młodzieżowy): „Forum Młodych: Jakiej Europy chcą młodzi?”' : 'Panel IIIC (jugendlich): „Forum der Jungen: Welche Europa wollen die Jungen?”'}>{language === 'pl' ? 'Panel IIIC (młodzieżowy): „Forum Młodych: Jakiej Europy chcą młodzi?”' : 'Panel IIIC (jugendlich): „Forum der Jungen: Welche Europa wollen die Jungen?”'}</option>
+              {morningPanels.map((panel) => (
+                <option key={panel} value={panel}>{panel}</option>
+              ))}
             </select>
-            {errors.panelSobotaRano && <p className="text-red-500">{errors.panelSobotaRano.message}</p>}
+            {errors.panelSobotaRanoPierwszyWybor && <p className="text-red-500">{errors.panelSobotaRanoPierwszyWybor.message}</p>}
+
+            <p className="text-lime-600 mt-4">{language === 'pl' ? 'Panel drugiego wyboru' : 'Panel zweite Wahl'}</p>
+            <select {...register('panelSobotaRanoDrugiWybor')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
+              <option value="">{language === 'pl' ? 'Wybierz panel' : 'Panel auswählen'}</option>
+              {morningPanels.map((panel) => (
+                <option key={`${panel}-second`} value={panel}>{panel}</option>
+              ))}
+            </select>
+            {errors.panelSobotaRanoDrugiWybor && <p className="text-red-500">{errors.panelSobotaRanoDrugiWybor.message}</p>}
           </div>
 
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Panel sobota popołudniu (do wyboru):' : 'Panel Samstag nachmittags (Auswahl):'}</label>
-            <select {...register('panelSobotaPopoludniu')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Panele sobota popołudniu (do wyboru):' : 'Panels Samstagnachmittag (Auswahl):'}</label>
+            <p className="text-lime-600 mt-2">{language === 'pl' ? 'Panel pierwszego wyboru' : 'Panel erste Wahl'}</p>
+            <select {...register('panelSobotaPopoludniuPierwszyWybor')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
               <option value="">{language === 'pl' ? 'Wybierz panel' : 'Panel auswählen'}</option>
-              <option value={language === 'pl' ? 'Panel IV: „Europa Środkowa na zakręcie: Polska, Niemcy, Węgry”' : 'Panel IV: „Mitteleuropa am Scheideweg: Polen, Deutschland, Ungarn”'}>{language === 'pl' ? 'Panel IV: „Europa Środkowa na zakręcie: Polska, Niemcy, Węgry”' : 'Panel IV: „Mitteleuropa am Scheideweg: Polen, Deutschland, Ungarn”'}</option>
-              <option value={language === 'pl' ? 'Panel V: „Re:start Europa. Polska i Niemcy wobec bezpieczeństwa Europy”' : 'Panel V: „Re:start Europa. Polen und Deutschland in Sicherheit Europas”'}>{language === 'pl' ? 'Panel V: „Re:start Europa. Polska i Niemcy wobec bezpieczeństwa Europy”' : 'Panel V: „Re:start Europa. Polen und Deutschland in Sicherheit Europas”'}</option>
-              <option value={language === 'pl' ? 'Panel VI: „Prawica, protest, zmiana. Polska i Niemcy w nowym układzie politycznym Europy”' : 'Panel VI: „Rechtspopulismus, Protest, Wandel. Polen und Deutschland im neuen politischen Gefüge Europas”'}>{language === 'pl' ? 'Panel VI: „Prawica, protest, zmiana. Polska i Niemcy w nowym układzie politycznym Europy”' : 'Panel VI: „Rechtspopulismus, Protest, Wandel. Polen und Deutschland im neuen politischen Gefüge Europas”'}</option>
-              <option value={language === 'pl' ? 'Panel VII (akademicki): „Germanistyka i niemcoznawstwo wobec współczesnych wyzwań dialogu PL-DE”' : 'Panel VII (akademisch): „Germanistik und German Studies im Angesicht aktueller Herausforderungen des PL-DE Dialogs”'}>{language === 'pl' ? 'Panel VII (akademicki): „Germanistyka i niemcoznawstwo wobec współczesnych wyzwań dialogu PL-DE”' : 'Panel VII (akademisch): „Germanistik und German Studies im Angesicht aktueller Herausforderungen des PL-DE Dialogs”'}</option>
+              {afternoonPanels.map((panel) => (
+                <option key={panel} value={panel}>{panel}</option>
+              ))}
             </select>
-            {errors.panelSobotaPopoludniu && <p className="text-red-500">{errors.panelSobotaPopoludniu.message}</p>}
+            {errors.panelSobotaPopoludniuPierwszyWybor && <p className="text-red-500">{errors.panelSobotaPopoludniuPierwszyWybor.message}</p>}
+
+            <p className="text-lime-600 mt-4">{language === 'pl' ? 'Panel drugiego wyboru' : 'Panel zweite Wahl'}</p>
+            <select {...register('panelSobotaPopoludniuDrugiWybor')} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2">
+              <option value="">{language === 'pl' ? 'Wybierz panel' : 'Panel auswählen'}</option>
+              {afternoonPanels.map((panel) => (
+                <option key={`${panel}-second`} value={panel}>{panel}</option>
+              ))}
+            </select>
+            {errors.panelSobotaPopoludniuDrugiWybor && <p className="text-red-500">{errors.panelSobotaPopoludniuDrugiWybor.message}</p>}
           </div>
 
           <div>
