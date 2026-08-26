@@ -22,6 +22,7 @@ interface FormValues {
   panelSobotaPopoludniuDrugiWybor: string;
   zwiedzanieEcsNiedziela: string;
   bal: string;
+  zgodaRodo: boolean;
   uwagi?: string;
 }
 
@@ -68,6 +69,7 @@ const validationSchemaPL = Yup.object<FormValues>().shape({
     .notOneOf([Yup.ref('panelSobotaPopoludniuPierwszyWybor')], 'Drugi wybór musi być inny niż pierwszy'),
   zwiedzanieEcsNiedziela: Yup.string().required('Wybór jest wymagany'),
   bal: Yup.string().required('Wybór jest wymagany'),
+  zgodaRodo: Yup.boolean().required('Zgoda jest wymagana').oneOf([true], 'Zgoda jest wymagana'),
   uwagi: Yup.string().optional(),
 });
 
@@ -88,6 +90,7 @@ const validationSchemaDE = Yup.object<FormValues>().shape({
     .notOneOf([Yup.ref('panelSobotaPopoludniuPierwszyWybor')], 'Die zweite Auswahl muss sich von der ersten unterscheiden'),
   zwiedzanieEcsNiedziela: Yup.string().required('Bitte wählen Sie eine Option'),
   bal: Yup.string().required('Bitte wählen Sie eine Option'),
+  zgodaRodo: Yup.boolean().required('Ihre Zustimmung ist erforderlich').oneOf([true], 'Ihre Zustimmung ist erforderlich'),
   uwagi: Yup.string().optional(),
 });
 
@@ -236,6 +239,29 @@ const FormComponent: React.FC = () => {
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Uwagi:' : 'Bemerkungen:'}</label>
             <textarea {...register('uwagi')} placeholder={language === 'pl' ? 'Uwagi' : 'Bemerkungen'} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2 h-32 resize-none" maxLength={500} />
             {errors.uwagi && <p className="text-red-500">{errors.uwagi.message}</p>}
+          </div>
+
+          <div>
+            <label className="flex items-start gap-2 text-slate-700">
+              <input type="checkbox" {...register('zgodaRodo')} className="mt-1" />
+              <span>
+                {language === 'pl'
+                  ? 'Zapoznałem się z informacją o przetwarzaniu danych osobowych i wyrażam zgodę na przetwarzanie moich danych.'
+                  : 'Ich habe die Informationen zur Verarbeitung personenbezogener Daten gelesen und stimme der Verarbeitung meiner Daten zu.'}
+              </span>
+            </label>
+            {errors.zgodaRodo && <p className="text-red-500">{errors.zgodaRodo.message}</p>}
+          </div>
+
+          <div className="flex justify-center">
+            <a
+              href="/Klauzula%20RODO.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 rounded-lg bg-emerald-700 hover:bg-emerald-600 active:bg-emerald-600 focus:outline-none focus:ring focus:ring-emerald-700 text-white font-semibold"
+            >
+              {language === 'pl' ? 'Klauzula RODO' : 'Datenschutzerklärung'}
+            </a>
           </div>
 
           <button type="submit" className="w-full m-3 border rounded-lg border-lime-600 py-3 px-6 bg-lime-700 text-white font-bold hover:bg-lime-900 hover:text-gray-200">

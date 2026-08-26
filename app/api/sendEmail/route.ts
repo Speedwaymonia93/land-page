@@ -145,6 +145,7 @@ export async function POST(req: NextRequest) {
 		panelSobotaPopoludniuDrugiWybor,
 		zwiedzanieEcsNiedziela,
 		bal,
+		zgodaRodo,
 		uwagi,
 	} = await req.json();
 
@@ -189,6 +190,7 @@ export async function POST(req: NextRequest) {
 	      		<p><strong>Panel sobota popołudniu - drugi wybór:</strong> ${panelSobotaPopoludniuDrugiWybor}</p>
         		<p><strong>Zwiedzanie ECS niedziela:</strong> ${zwiedzanieEcsNiedziela}</p>
 				<p><strong>Bal polsko-niemiecki:</strong> ${bal}</p>
+				<p><strong>Zgoda RODO:</strong> ${zgodaRodo ? 'Tak' : 'Nie'}</p>
         		<p><strong>Uwagi:</strong> ${uwagi}</p>
         		<style>
           		h1 {
