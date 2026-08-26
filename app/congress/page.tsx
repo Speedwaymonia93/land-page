@@ -99,7 +99,9 @@ const Congress: React.FC = () => {
 
       <section className="w-full max-w-3xl mx-auto text-left px-6 mb-8 space-y-4">
         <p className="text-lg font-semibold text-slate-800">
-          {language === 'pl' ? 'Wpisowe za udział w Kongresie wynosi 205,00 PLN/ 49,00 €.' : 'Die Teilnahmegebühr beträgt 205,00 PLN/ 49,00 €.'}
+          {language === 'pl'
+            ? 'Opłata za udział w Kongresie wynosi 205,00 PLN/ 49,00 € (studenci, doktoranci, licealiści 100 PLN / 25 €).'
+            : 'Die Teilnahmegebühr beträgt 205,00 PLN/ 49,00 € (Studierenden / Doktoranden / Schüler 100,00 PLN / 25 €).'}
         </p>
         <p className="text-slate-700">
           {language === 'pl'

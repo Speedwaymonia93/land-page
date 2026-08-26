@@ -140,7 +140,7 @@ const FormComponent: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Student:' : 'Student:'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Student / Doktorant / Licealista:' : 'Student / Doktorand / Schüler:'}</label>
             <div className='flex flex-row gap-6 mt-2'>
               <label className='flex items-center'><input className="mr-2" type="radio" value="TAK" {...register('student')} /> {language === 'pl' ? 'TAK' : 'JA'}</label>
               <label className='flex items-center'><input className="mr-2" type="radio" value="NIE" {...register('student')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</label>
@@ -155,7 +155,7 @@ const FormComponent: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Vegetarianin:' : 'Vegetarisch:'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Wegetarianin:' : 'Vegetarisch:'}</label>
             <div className='flex flex-row gap-6 mt-2'>
               <label className='flex items-center'><input className="mr-2" type="radio" value="TAK" {...register('vegetarianin')} /> {language === 'pl' ? 'TAK' : 'JA'}</label>
               <label className='flex items-center'><input className="mr-2" type="radio" value="NIE" {...register('vegetarianin')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</label>
@@ -164,7 +164,7 @@ const FormComponent: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Oprowadzanie w piątek:' : 'Stadtführung am Freitag:'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Spacer śladami Güntera Grassa (piątek):' : 'Literarischer Spaziergang auf den Spuren von Günter Grass (Freitag):'}</label>
             <div className='flex flex-row gap-6 mt-2'>
               <label className='flex items-center'><input className="mr-2" type="radio" value="TAK" {...register('oprowadzanie')} /> {language === 'pl' ? 'TAK' : 'JA'}</label>
               <label className='flex items-center'><input className="mr-2" type="radio" value="NIE" {...register('oprowadzanie')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</label>
@@ -224,7 +224,7 @@ const FormComponent: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Bal/Ball:' : 'Ball:'}</label>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'Bal polsko-niemiecki:' : 'Deutsch-polnischer Ball:'}</label>
             <div className='flex flex-row gap-6 mt-2'>
               <label className='flex items-center'><input className="mr-2" type="radio" value="TAK" {...register('bal')} /> {language === 'pl' ? 'TAK' : 'JA'}</label>
               <label className='flex items-center'><input className="mr-2" type="radio" value="NIE" {...register('bal')} /> {language === 'pl' ? 'NIE' : 'NEIN'}</label>

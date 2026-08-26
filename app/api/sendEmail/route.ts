@@ -179,16 +179,16 @@ export async function POST(req: NextRequest) {
         		<h1>Formularz zgłoszenia na kongres</h1>
         		<p><strong>Imię:</strong> ${imie}</p>
         		<p><strong>Nazwisko:</strong> ${nazwisko}</p>
-        		<p><strong>Student:</strong> ${student}</p>
+				<p><strong>Student / Doktorant / Licealista:</strong> ${student}</p>
         		<p><strong>Organizacja / Instytucja:</strong> ${organizacja}</p>
-        		<p><strong>Vegetarianin:</strong> ${vegetarianin}</p>
-        		<p><strong>Oprowadzanie w piątek:</strong> ${oprowadzanie}</p>
+				<p><strong>Wegetarianin:</strong> ${vegetarianin}</p>
+				<p><strong>Spacer śladami Güntera Grassa (piątek):</strong> ${oprowadzanie}</p>
 	      		<p><strong>Panel sobota rano - pierwszy wybór:</strong> ${panelSobotaRanoPierwszyWybor}</p>
 	      		<p><strong>Panel sobota rano - drugi wybór:</strong> ${panelSobotaRanoDrugiWybor}</p>
 	      		<p><strong>Panel sobota popołudniu - pierwszy wybór:</strong> ${panelSobotaPopoludniuPierwszyWybor}</p>
 	      		<p><strong>Panel sobota popołudniu - drugi wybór:</strong> ${panelSobotaPopoludniuDrugiWybor}</p>
         		<p><strong>Zwiedzanie ECS niedziela:</strong> ${zwiedzanieEcsNiedziela}</p>
-        		<p><strong>Bal/Ball:</strong> ${bal}</p>
+				<p><strong>Bal polsko-niemiecki:</strong> ${bal}</p>
         		<p><strong>Uwagi:</strong> ${uwagi}</p>
         		<style>
           		h1 {
