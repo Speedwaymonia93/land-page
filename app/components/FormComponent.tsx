@@ -12,6 +12,7 @@ import { useLanguage } from '../context/LanguageContext';
 interface FormValues {
   imie: string;
   nazwisko: string;
+  email: string;
   student: string;
   organizacja: string;
   vegetarianin: string;
@@ -55,6 +56,7 @@ const afternoonPanelsDE = [
 const validationSchemaPL = Yup.object<FormValues>().shape({
   imie: Yup.string().required('Imię jest wymagane'),
   nazwisko: Yup.string().required('Nazwisko jest wymagane'),
+  email: Yup.string().email('Podaj poprawny adres e-mail').required('E-mail jest wymagany'),
   student: Yup.string().required('Wybór jest wymagany'),
   organizacja: Yup.string().required('Organizacja / Instytucja jest wymagana'),
   vegetarianin: Yup.string().required('Wybór jest wymagany'),
@@ -76,6 +78,7 @@ const validationSchemaPL = Yup.object<FormValues>().shape({
 const validationSchemaDE = Yup.object<FormValues>().shape({
   imie: Yup.string().required('Vorname ist erforderlich'),
   nazwisko: Yup.string().required('Nachname ist erforderlich'),
+  email: Yup.string().email('Bitte geben Sie eine gültige E-Mail-Adresse ein').required('E-Mail ist erforderlich'),
   student: Yup.string().required('Bitte wählen Sie eine Option'),
   organizacja: Yup.string().required('Organisation / Institution ist erforderlich'),
   vegetarianin: Yup.string().required('Bitte wählen Sie eine Option'),
@@ -140,6 +143,12 @@ const FormComponent: React.FC = () => {
             <label className="text-lime-600 font-bold">{language === 'pl' ? 'Nazwisko:' : 'Nachname:'}</label>
             <input type="text" {...register('nazwisko')} placeholder={language === 'pl' ? 'Nazwisko' : 'Nachname'} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2" />
             {errors.nazwisko && <p className="text-red-500">{errors.nazwisko.message}</p>}
+          </div>
+
+          <div>
+            <label className="text-lime-600 font-bold">{language === 'pl' ? 'E-mail:' : 'E-Mail:'}</label>
+            <input type="email" {...register('email')} placeholder={language === 'pl' ? 'E-mail' : 'E-Mail'} className="rounded p-3 w-full bg-gray-100 bg-opacity-50 text-blue-700 mt-2" />
+            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
           </div>
 
           <div>

@@ -135,6 +135,7 @@ export async function POST(req: NextRequest) {
 	const {
 		imie,
 		nazwisko,
+		email,
 		student,
 		organizacja,
 		vegetarianin,
@@ -168,6 +169,9 @@ export async function POST(req: NextRequest) {
       		From: {
         		Email: from,
 					Name: `${imie} ${nazwisko}`,
+				ReplyTo: {
+					Email: email,
+				},
       		},
       		To: [
         		{
@@ -180,6 +184,7 @@ export async function POST(req: NextRequest) {
         		<h1>Formularz zgłoszenia na kongres</h1>
         		<p><strong>Imię:</strong> ${imie}</p>
         		<p><strong>Nazwisko:</strong> ${nazwisko}</p>
+				<p><strong>E-mail:</strong> ${email}</p>
 				<p><strong>Student / Doktorant / Licealista:</strong> ${student}</p>
         		<p><strong>Organizacja / Instytucja:</strong> ${organizacja}</p>
 				<p><strong>Wegetarianin:</strong> ${vegetarianin}</p>
