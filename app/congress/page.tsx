@@ -80,7 +80,7 @@ const Congress: React.FC = () => {
 
       <div className="px-6 pt-6 pb-6 flex justify-center">
         <Image
-          src="/IMG_5873.png"
+          src="/IMG_5873.jpeg"
           alt={language === 'pl' ? 'Plakat kongresu' : 'Kongressplakat'}
           width={900}
           height={1273}
